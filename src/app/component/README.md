@@ -63,5 +63,4 @@ Demo component files are included in Git Project.
 Demo Project:
 [https://github.com/manishit56/Angular4-JsonEditor/tree/master/src/app/demo)
 
-# License
-MIT(./LICENSE)
+
