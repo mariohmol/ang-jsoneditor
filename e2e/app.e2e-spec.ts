@@ -1,10 +1,10 @@
-import { Angular4JsonEditorPage } from './app.po';
+import { AngularJsonEditorPage } from './app.po';
 
-describe('angular4-json-editor App', () => {
-  let page: Angular4JsonEditorPage;
+describe('angular-json-editor App', () => {
+  let page: AngularJsonEditorPage;
 
   beforeEach(() => {
-    page = new Angular4JsonEditorPage();
+    page = new AngularJsonEditorPage();
   });
 
   it('should display welcome message', () => {

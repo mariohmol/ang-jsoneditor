@@ -8,4 +8,4 @@ import { JsonEditorComponent } from '../jsoneditor/jsoneditor.component';
   exports: [JsonEditorComponent]
 })
 
-export class Ng4JsonEditorModule { }
+export class NgJsonEditorModule { }

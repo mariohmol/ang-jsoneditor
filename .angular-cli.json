@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular4-json-editor"
+    "name": "angular-json-editor"
   },
   "apps": [
     {

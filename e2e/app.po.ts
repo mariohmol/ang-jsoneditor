@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Angular4JsonEditorPage {
+export class AngularJsonEditorPage {
   navigateTo() {
     return browser.get('/');
   }

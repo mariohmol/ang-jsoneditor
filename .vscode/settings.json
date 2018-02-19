@@ -1,0 +1,31 @@
+{
+  "files.exclude": {
+    "dist": "explorerExcludedFiles",
+    "tmp": "explorerExcludedFiles",
+    "out-tsc": "explorerExcludedFiles",
+    "node_modules": "explorerExcludedFiles",
+    ".idea": "explorerExcludedFiles",
+    ".project": "explorerExcludedFiles",
+    ".classpath": "explorerExcludedFiles",
+    ".c9/": "explorerExcludedFiles",
+    "*.launch": "explorerExcludedFiles",
+    ".settings/": "explorerExcludedFiles",
+    "*.sublime-workspace": "explorerExcludedFiles",
+    ".vscode/*": "explorerExcludedFiles",
+    "!.vscode/settings.json": "explorerExcludedFiles",
+    "!.vscode/tasks.json": "explorerExcludedFiles",
+    "!.vscode/launch.json": "explorerExcludedFiles",
+    "!.vscode/extensions.json": "explorerExcludedFiles",
+    ".sass-cache": "explorerExcludedFiles",
+    "connect.lock": "explorerExcludedFiles",
+    "coverage": "explorerExcludedFiles",
+    "libpeerconnection.log": "explorerExcludedFiles",
+    "npm-debug.log": "explorerExcludedFiles",
+    "testem.log": "explorerExcludedFiles",
+    "typings": "explorerExcludedFiles",
+    "e2e/*.js": "explorerExcludedFiles",
+    "e2e/*.map": "explorerExcludedFiles",
+    ".DS_Store": "explorerExcludedFiles",
+    "Thumbs.db": "explorerExcludedFiles"
+  }
+}

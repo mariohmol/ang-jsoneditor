@@ -1,18 +1,18 @@
 {
-  "name": "angular4-jsoneditor",
+  "name": "ng-json-editor",
   "version": "1.0.2",
   "license": "MIT",
-  "homepage": "https://github.com/manishit56/Angular4-JsonEditor",
+  "homepage": "https://github.com/mariohmol/ng-json-editor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/manishit56/Angular4-JsonEditor.git"
+    "url": "https://github.com/mariohmol/ng-json-editor.git"
   },
-  "author": "Manish Sodavadiya <manish_it56@yahoo.com>",
+  "author": "Manish Sodavadiya <manish_it56@yahoo.com>, Mario Mol <mariohmol@gmail.com>",
   "keywords": [
-    "angular4",
+    "angular",
     "jsoneditor",
-    "angular4-jsoneditor",
-    "ng4-jsoneditor",
+    "ng-json-editor",
+    "ng-jsoneditor",
     "angular"
   ],
   "scripts": {
@@ -25,28 +25,28 @@
   },
   "private": false,
   "dependencies": {
-    "@angular/animations": "^4.0.0",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",
+    "@angular/animations": "~5.1.1",
+    "@angular/common": "~5.1.1",
+    "@angular/compiler": "~5.1.1",
+    "@angular/core": "~5.1.1",
+    "@angular/forms": "~5.1.1",
+    "@angular/http": "~5.1.1",
+    "@angular/platform-browser": "~5.1.1",
+    "@angular/platform-browser-dynamic": "~5.1.1",
+    "@angular/router": "~5.1.1",
     "core-js": "^2.4.1",
     "jsoneditor": "^5.9.3",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "rxjs": "^5.5.5",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/language-service": "^4.0.0",
+    "@angular/cli": "1.2.6",
+    "@angular/compiler-cli": "~5.1.1",
+    "@angular/language-service": "~5.1.1",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "codelyzer": "~3.0.1",
+    "codelyzer": "~4.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -58,6 +58,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.5.3"
   }
 }
