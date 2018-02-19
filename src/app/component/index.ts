@@ -1,7 +1,7 @@
 /**
  * @name Angular-JsonEditor
  * @description
- * Wrapper for Json Editor in Angular 4.
+ * Wrapper for Json Editor in Angular .
  * @author Manish Sodavadiya 2017-09-08
  */
 

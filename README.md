@@ -1,6 +1,8 @@
-# Angular 4 Json Editor
+# Angular Json Editor
 
-Angular 4 Json Editor (wrapper for jsoneditor). View/Edit Json file with formatting.
+Angular Json Editor (wrapper for jsoneditor). View/Edit Json file with formatting.
+
+Working with latest Angular 5. 
 
 ## Installation
 
@@ -12,7 +14,7 @@ $ npm install --save ang-jsoneditor
 
 ### Configuration
 
-First, Import Angular 4 JsonEditor module in root
+First, Import Angular  JsonEditor module in root
 
 ```ts
 import { NgJsonEditorModule } from 'angular-jsoneditor' 
