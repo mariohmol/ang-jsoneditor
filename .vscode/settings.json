@@ -4,6 +4,7 @@
     "tmp": "explorerExcludedFiles",
     "out-tsc": "explorerExcludedFiles",
     "node_modules": "explorerExcludedFiles",
+    "src/app/component/node_modules": "explorerExcludedFiles",
     ".idea": "explorerExcludedFiles",
     ".project": "explorerExcludedFiles",
     ".classpath": "explorerExcludedFiles",
