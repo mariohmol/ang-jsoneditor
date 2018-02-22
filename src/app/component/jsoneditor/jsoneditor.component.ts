@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Input , ViewChild} from '@angular/core';
 import * as editor from 'jsoneditor';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'json-editor',
   template: '<div #jsonEditorContainer></div>'
 })
@@ -96,6 +97,8 @@ export class JsonEditorOptions {
   public search: boolean;
   public indentation: Number;
   public theme: Number;
+  public language: String;
+  public languages: Object;
 
   constructor() {
     this.escapeUnicode = false;
