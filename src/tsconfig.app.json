@@ -9,5 +9,10 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../node_modules/ang-jsoneditor/index.ts",
+    "../node_modules/ang-jsoneditor/jsoneditor/jsoneditor.component.ts"
   ]
 }
