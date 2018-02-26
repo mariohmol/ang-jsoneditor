@@ -4,6 +4,8 @@ Angular Json Editor (wrapper for jsoneditor). View/Edit Json file with formattin
 
 Working with latest Angular 5. 
 
+![Demo Image](/src/assets/printDemo.png)
+
 ## Installation
 
 To install this library with npm, run below command:

@@ -1,3 +1,8 @@
+<h2>Options</h2>
+<button (click)="setLanguage('en')">Language EN</button>
+<button (click)="setLanguage('pt-BR')">Language PT</button>
+<button (click)="customLanguage()">Language Custom</button>
+<h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
 <div style="height:600px;"> 
 <json-editor [options]="editorOptions" [data]="data" ></json-editor>
 </div>

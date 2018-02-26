@@ -18,19 +18,6 @@ export class DemoComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.editorOptions.mode = 'code'; //set only one mode
-    this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
-
-    // languages
-    // this.editorOptions.languages = {
-    //   'pt-BR': {
-    //     'auto': 'Automático testing'
-    //   },
-    //   'en': {
-    //     'auto': 'Auto testing'
-    //   }
-    // };
-    // this.editorOptions.language = 'en'; // force a specific language, ie. pt-BR
 
     this.data = {
       'products': [
@@ -51,6 +38,28 @@ export class DemoComponent implements OnInit {
       ]
     }
 
+  }
+
+  initEditorOptions() {
+    // this.editorOptions.mode = 'code'; //set only one mode
+    this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
+  }
+
+  setLanguage(lang) {
+    this.editorOptions.language = lang; // force a specific language, ie. pt-BR
+    this.editor.setOptions(this.editorOptions);
+  }
+
+  customLanguage() {
+    this.editorOptions.languages = {
+      'pt-BR': {
+        'auto': 'Automático testing'
+      },
+      'en': {
+        'auto': 'Auto testing'
+      }
+    };
+    this.editor.setOptions(this.editorOptions);
   }
 
 }

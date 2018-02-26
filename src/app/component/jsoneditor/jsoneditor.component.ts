@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input , ViewChild} from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
 import * as editor from 'jsoneditor';
 
 @Component({
@@ -65,6 +65,14 @@ export class JsonEditorComponent implements OnInit {
 
   public setSchema(schema: any) {
     this.editor.setSchema(schema);
+  }
+
+  public setOptions(newOptions: JsonEditorOptions) {
+    if (this.editor) {
+      this.editor.destroy();
+    }
+    this.options = newOptions;
+    this.ngOnInit();
   }
 
   public destroy() {
