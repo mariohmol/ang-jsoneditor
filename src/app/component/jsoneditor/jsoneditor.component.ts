@@ -1,4 +1,7 @@
-import { Component, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component, OnInit, ElementRef, Input, ViewChild,
+  SimpleChanges
+} from '@angular/core';
 import * as editor from 'jsoneditor';
 
 @Component({
@@ -9,18 +12,26 @@ import * as editor from 'jsoneditor';
 
 export class JsonEditorComponent implements OnInit {
   private editor: any;
-  private optionsDiffer: any;
-  private dataDiffer: any;
 
   @ViewChild('jsonEditorContainer') jsonEditorContainer: ElementRef;
 
-  @Input() options: JsonEditorOptions = new JsonEditorOptions();
-  @Input() data: Object = {};
+  private _data: Object = {};
 
-  constructor() { }
+  @Input() options: JsonEditorOptions = new JsonEditorOptions();
+  @Input('data')
+  set data(value: Object) {
+    this._data = value;
+    if (this.editor) {
+      this.editor.destroy();
+      this.ngOnInit();
+    }
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
-    this.editor = new editor(this.jsonEditorContainer.nativeElement, this.options, this.data);
+    this.editor = new editor(this.jsonEditorContainer.nativeElement, this.options, this._data);
   }
 
   public collapseAll() {

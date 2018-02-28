@@ -14,12 +14,13 @@ export class DemoComponent implements OnInit {
   @ViewChild(JsonEditorComponent) editor: JsonEditorComponent;
 
   constructor() {
-    this.editorOptions = new JsonEditorOptions()
+    this.editorOptions = new JsonEditorOptions();
   }
 
   ngOnInit() {
 
     this.data = {
+      'randomNumber': 10,
       'products': [
         {
           'name': 'car',
@@ -62,4 +63,12 @@ export class DemoComponent implements OnInit {
     this.editor.setOptions(this.editorOptions);
   }
 
+  changeObject() {
+    this.data.randomNumber = Math.random() * 100;
+  }
+
+  changeData() {
+    this.data = Object.assign({}, this.data,
+      { randomNumber: Math.random() * 100 });
+  }
 }

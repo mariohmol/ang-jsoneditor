@@ -1,7 +1,18 @@
 <h2>Options</h2>
+
+<h3>Language</h3>
 <button (click)="setLanguage('en')">Language EN</button>
 <button (click)="setLanguage('pt-BR')">Language PT</button>
 <button (click)="customLanguage()">Language Custom</button>
+<hr/>
+
+<h3>Live Reload</h3>
+<button (click)="changeData()">New Data</button>
+<!-- <button (click)="changeObject()">Change Data</button> -->
+Random Number: {{data.randomNumber}}
+
+<hr/>
+
 <h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
 <div style="height:600px;"> 
 <json-editor [options]="editorOptions" [data]="data" ></json-editor>
