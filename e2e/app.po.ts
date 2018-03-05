@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class AngularJsonEditorPage {
+export class NgPackagedPage {
   navigateTo() {
     return browser.get('/');
   }

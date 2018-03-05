@@ -38,7 +38,7 @@ Then setup your component models as below :
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor/jsoneditor/jsoneditor.component';
+import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
 
 @Component({
   selector: 'app-root',

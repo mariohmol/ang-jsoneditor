@@ -15,6 +15,12 @@
     "lib": [
       "es2016",
       "dom"
-    ]
-  }
+    ],
+    "paths": {
+      "ang-jsoneditor": [ "dist/ang-jsoneditor" ]
+    }
+  },
+  "exclude": [
+    ".ng_build"
+  ]
 }

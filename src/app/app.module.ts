@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { DemoComponent } from './demo/demo.component';
-import { NgJsonEditorModule } from './component/ng-jsoneditor/ng-jsoneditor.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/demo', pathMatch: 'full' },
@@ -12,15 +14,15 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DemoComponent
+    AppComponent, DemoComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     NgJsonEditorModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

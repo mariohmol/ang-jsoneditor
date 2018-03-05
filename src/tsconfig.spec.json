@@ -8,7 +8,10 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@my/lib": [ "../dist/ang-jsoneditor" ]
+    }
   },
   "files": [
     "test.ts"
