@@ -1,12 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular-json-editor"
+    "name": "ang-jsoneditor"
   },
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "name": "dev",
+      "outDir": "dist/app",
       "assets": [
         "assets",
         "favicon.ico"
@@ -16,6 +17,31 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "root": "src",
+      "name": "packages",
+      "outDir": "dist/app",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.packages.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
