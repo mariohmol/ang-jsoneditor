@@ -72,5 +72,7 @@ Demo component files are included in Git Project.
 Demo Project:
 [https://github.com/mariohmol/ang-jsoneditor/tree/master/src/app/demo)
 
+When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/developers
+
 # License
 MIT(./LICENSE)
