@@ -78,6 +78,10 @@ export class JsonEditorComponent implements OnInit {
     this.editor.setSelection(start, end);
   }
 
+  public getSelection(): any {
+    return this.editor.getSelection();
+  }
+
   public setSchema(schema: any) {
     this.editor.setSchema(schema);
   }
