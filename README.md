@@ -19,7 +19,7 @@ $ npm install --save ang-jsoneditor
 First, Import Angular  JsonEditor module in root
 
 ```ts
-import { NgJsonEditorModule } from 'angular-jsoneditor' 
+import { NgJsonEditorModule } from 'ang-jsoneditor' 
 
 @NgModule({
   declarations: [
