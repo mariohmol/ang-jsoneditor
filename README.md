@@ -10,7 +10,7 @@ Working with latest Angular 5.
 
 To install this library with npm, run below command:
 
-$ npm install --save ang-jsoneditor
+$ npm install --save jsoneditor ang-jsoneditor
 
 ## Usage
 
