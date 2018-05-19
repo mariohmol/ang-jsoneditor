@@ -71,4 +71,12 @@ export class DemoComponent implements OnInit {
     this.data = Object.assign({}, this.data,
       { randomNumber: Math.random() * 100 });
   }
+
+  /**
+   * Example on how get the json changed from the jsoneditor
+   */
+  getData() {
+    const changedJson = this.editor.get();
+    console.log(changedJson);
+  }
 }
