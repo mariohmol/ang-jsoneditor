@@ -37,8 +37,13 @@ export class DemoComponent implements OnInit {
             ]
         }
       ]
-    }
+    };
 
+    this.editorOptions.onChange = this.change.bind(this);
+  }
+
+  change() {
+    console.log('change:' + this.editor);
   }
 
   initEditorOptions() {

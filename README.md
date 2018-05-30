@@ -67,9 +67,10 @@ Note : For better styling, add below line to your main style.css file
 ```
 
 # Demo
+
 Demo component files are included in Git Project.
 
-Demo Project:
+Demo Project with a lot of different implementations (ngInit, change event and others):
 [https://github.com/mariohmol/ang-jsoneditor/tree/master/src/app/demo)
 
 When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/developers
