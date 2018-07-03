@@ -14,6 +14,11 @@ Random Number: {{data.randomNumber}}
 <hr/>
 
 <h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
-<div style="height:600px;"> 
-<json-editor [options]="editorOptions" [data]="data" ></json-editor>
+<div style="height:300px;">
+  <json-editor [options]="editorOptions" [data]="data" #editor></json-editor>
+</div>
+
+<h3>Multiple jsoneditor</h3>
+<div style="height:600px;">
+  <json-editor [options]="editorOptions" [data]="data2" #editorTwo></json-editor>
 </div>

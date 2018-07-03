@@ -10,8 +10,10 @@ export class DemoComponent implements OnInit {
 
   public editorOptions: JsonEditorOptions;
   public data: any;
+  public data2: any;
 
-  @ViewChild(JsonEditorComponent) editor: JsonEditorComponent;
+  @ViewChild('editor') editor: JsonEditorComponent;
+  @ViewChild('editorTwo') editorTwo: JsonEditorComponent;
 
   constructor() {
     this.editorOptions = new JsonEditorOptions();
@@ -39,11 +41,16 @@ export class DemoComponent implements OnInit {
       ]
     };
 
+    this.data2 = {
+      'nedata': 'test'
+    };
+
     this.editorOptions.onChange = this.change.bind(this);
   }
 
   change() {
     console.log('change:' + this.editor);
+    console.log('change2:' + this.editorTwo);
   }
 
   initEditorOptions() {
