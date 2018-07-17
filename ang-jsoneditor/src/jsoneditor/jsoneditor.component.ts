@@ -1,6 +1,5 @@
 import {
-  Component, OnInit, ElementRef, Input, ViewChild,
-  SimpleChanges
+  Component, ElementRef, Input, OnInit, ViewChild
 } from '@angular/core';
 import * as editor from 'jsoneditor';
 
