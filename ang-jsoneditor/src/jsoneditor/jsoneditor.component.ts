@@ -93,6 +93,12 @@ export class JsonEditorComponent implements OnInit {
     this.ngOnInit();
   }
 
+  public setAceEditorOption(option, value) {
+    if (this.editor.aceEditor) {
+      this.editor.aceEditor.setOptions({[option]: value});
+    }
+  }
+
   public destroy() {
     this.editor.destroy();
   }
