@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { DemoComponent } from './demo/demo.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/demo', pathMatch: 'full' },
   { path: 'demo', component: DemoComponent }
 ];
