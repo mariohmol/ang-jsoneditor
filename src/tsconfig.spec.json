@@ -10,7 +10,7 @@
       "node"
     ],
     "paths": {
-      "@my/lib": [ "../dist/ang-jsoneditor" ]
+      "ang-jsoneditor": [ "../ang-jsoneditor/src/public_api.ts" ]
     }
   },
   "files": [
