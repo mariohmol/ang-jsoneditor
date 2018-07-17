@@ -17,6 +17,7 @@ export class DemoComponent implements OnInit {
 
   constructor() {
     this.editorOptions = new JsonEditorOptions();
+    this.initEditorOptions();
   }
 
   ngOnInit() {
@@ -49,17 +50,27 @@ export class DemoComponent implements OnInit {
   }
 
   change() {
-    console.log('change:' + this.editor);
-    console.log('change2:' + this.editorTwo);
+    console.log('change:', this.editor);
+    console.log('change2:', this.editorTwo);
   }
 
   initEditorOptions() {
-    // this.editorOptions.mode = 'code'; //set only one mode
+    this.editorOptions.mode = 'code'; // set only one mode
     this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
+    // this.editorOptions.ace = (<any>window).ace.edit('editor');
   }
 
   setLanguage(lang) {
     this.editorOptions.language = lang; // force a specific language, ie. pt-BR
+    this.editor.setOptions(this.editorOptions);
+  }
+
+  setAce() {
+    const aceEditor = (<any> window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
+    // custom your ace here
+    aceEditor.setReadOnly(true);
+    aceEditor.setFontSize('110pt');
+    this.editorOptions.ace = aceEditor;
     this.editor.setOptions(this.editorOptions);
   }
 

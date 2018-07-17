@@ -1,17 +1,17 @@
 import {
-  Component, OnInit, ElementRef, Input, ViewChild,
-  SimpleChanges
+  Component, OnInit, ElementRef, Input, ViewChild
 } from '@angular/core';
 import * as editor from 'jsoneditor';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'json-editor',
-  template: '<div #jsonEditorContainer></div>'
+  template: '<div [id]="id" #jsonEditorContainer></div>'
 })
 
 export class JsonEditorComponent implements OnInit {
   private editor: any;
+  public id = 'angjsoneditor' + Math.floor(Math.random() * 1000000);
 
   @ViewChild('jsonEditorContainer') jsonEditorContainer: ElementRef;
 
@@ -108,7 +108,7 @@ export interface JsonEditorTreeNode {
 }
 
 export class JsonEditorOptions {
-  public ace: Object;
+  public ace: any;
   public ajv: Object;
   public onChange: () => void;
   public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };

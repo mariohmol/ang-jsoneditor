@@ -12,7 +12,8 @@
     "publish": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "reinstall": "rm package-lock.json && rm -rf node_modules && npm i"
   },
   "dependencies": {
     "@angular/common": "~5.2.0",
@@ -24,8 +25,9 @@
     "@angular/platform-browser-dynamic": "~5.2.0",
     "@angular/router": "~5.2.0",
     "core-js": "^2.4.1",
-    "jsoneditor": "^5.14.0",
+    "jsoneditor": "^5.19.0",
     "rxjs": "^5.4.2",
+    "webpack": "^3.11.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -49,8 +51,8 @@
     "protractor": "~5.3.0",
     "rimraf": "^2.6.1",
     "ts-node": "~5.0.0",
-    "tslint": "~5.9.0",
     "tsickle": "^0.27.1",
+    "tslint": "~5.9.0",
     "typescript": "~2.7.1"
   }
 }
