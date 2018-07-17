@@ -55,7 +55,7 @@ export class DemoComponent implements OnInit {
   }
 
   initEditorOptions() {
-    this.editorOptions.mode = 'code'; // set only one mode
+    // this.editorOptions.mode = 'code'; // set only one mode
     this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
     // this.editorOptions.ace = (<any>window).ace.edit('editor');
   }
