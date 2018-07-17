@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:app": "cpr dist/ang-jsoneditor src/ang-jsoneditor && ng build --app packages && rimraf src/ang-jsoneditor",
+    "build:app": "rimraf src/ang-jsoneditor && cpr dist/ang-jsoneditor src/ang-jsoneditor && ng build --project packages && rimraf src/ang-jsoneditor",
     "build:lib": "rimraf dist && ng-packagr -p ang-jsoneditor/package.json",
     "publish": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
     "test": "ng test",
