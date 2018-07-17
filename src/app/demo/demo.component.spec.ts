@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
 
 import { DemoComponent } from './demo.component';
 
@@ -8,6 +9,9 @@ describe('DemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        NgJsonEditorModule.forRoot()
+      ],
       declarations: [ DemoComponent ]
     })
     .compileComponents();

@@ -10,11 +10,12 @@
       "node"
     ],
     "paths": {
-      "@my/lib": [ "../dist/ang-jsoneditor" ]
+      "ang-jsoneditor": [ "../ang-jsoneditor/src/public_api.ts" ]
     }
   },
   "files": [
-    "test.ts"
+    "test.ts",
+    "polyfills.ts"
   ],
   "include": [
     "**/*.spec.ts",

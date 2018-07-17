@@ -1,5 +1,9 @@
 import {
+<<<<<<< HEAD
   Component, OnInit, ElementRef, Input, ViewChild
+=======
+  Component, ElementRef, Input, OnInit, ViewChild
+>>>>>>> 3cc9585aee14c77e070196eb3d4af4361e56dc2c
 } from '@angular/core';
 import * as editor from 'jsoneditor';
 
