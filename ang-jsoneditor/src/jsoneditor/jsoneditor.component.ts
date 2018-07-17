@@ -1,6 +1,5 @@
 import {
-  Component, OnInit, ElementRef, Input, ViewChild,
-  SimpleChanges
+  Component, ElementRef, Input, OnInit, ViewChild
 } from '@angular/core';
 import * as editor from 'jsoneditor';
 
@@ -92,6 +91,12 @@ export class JsonEditorComponent implements OnInit {
     }
     this.options = newOptions;
     this.ngOnInit();
+  }
+
+  public setAceEditorOption(option, value) {
+    if (this.editor.aceEditor) {
+      this.editor.aceEditor.setOptions({[option]: value});
+    }
   }
 
   public destroy() {
