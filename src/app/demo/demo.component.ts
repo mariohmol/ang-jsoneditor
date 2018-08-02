@@ -66,11 +66,21 @@ export class DemoComponent implements OnInit {
   }
 
   setAce() {
-    const aceEditor = (<any> window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
+    const aceEditor = (<any>window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
     // custom your ace here
     aceEditor.setReadOnly(true);
     aceEditor.setFontSize('110pt');
     this.editorOptions.ace = aceEditor;
+    this.editor.setOptions(this.editorOptions);
+  }
+
+  toggleNav() {
+    this.editorOptions.navigationBar = !this.editorOptions.navigationBar;
+    this.editor.setOptions(this.editorOptions);
+  }
+
+  toggleStatus() {
+    this.editorOptions.statusBar = !this.editorOptions.statusBar;
     this.editor.setOptions(this.editorOptions);
   }
 
