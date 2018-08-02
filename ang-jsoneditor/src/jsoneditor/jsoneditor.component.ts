@@ -126,6 +126,22 @@ export class JsonEditorOptions {
   public theme: Number;
   public language: String;
   public languages: Object;
+  
+  /**
+   * Adds navigation bar to the menu - the navigation bar visualize the current position on
+   * the tree structure as well as allows breadcrumbs navigation. 
+   * True by default. 
+   * Only applicable when mode is 'tree', 'form' or 'view'.
+   */
+  public navigationBar: boolean;
+  
+  /**
+   * Adds status bar to the bottom of the editor - the status bar shows the cursor position 
+   * and a count of the selected characters. 
+   * True by default. 
+   * Only applicable when mode is 'code' or 'text'.
+   */
+  public statusBar: boolean;
 
   constructor() {
     this.escapeUnicode = false;
