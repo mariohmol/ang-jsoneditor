@@ -12,6 +12,7 @@ import * as editor from 'jsoneditor';
 export class JsonEditorComponent implements OnInit {
   private editor: any;
   public id = 'angjsoneditor' + Math.floor(Math.random() * 1000000);
+  public optionsChanged = false;
 
   @ViewChild('jsonEditorContainer') jsonEditorContainer: ElementRef;
 
@@ -31,7 +32,11 @@ export class JsonEditorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.editor = new editor(this.jsonEditorContainer.nativeElement, this.options, this._data);
+    let optionsBefore = this.options;
+    if (!this.optionsChanged && this.editor) {
+      optionsBefore = this.editor.options;
+    }
+    this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsBefore, this._data);
   }
 
   public collapseAll() {
@@ -90,6 +95,7 @@ export class JsonEditorComponent implements OnInit {
     if (this.editor) {
       this.editor.destroy();
     }
+    this.optionsChanged = true;
     this.options = newOptions;
     this.ngOnInit();
   }
@@ -126,19 +132,19 @@ export class JsonEditorOptions {
   public theme: Number;
   public language: String;
   public languages: Object;
-  
+
   /**
    * Adds navigation bar to the menu - the navigation bar visualize the current position on
-   * the tree structure as well as allows breadcrumbs navigation. 
-   * True by default. 
+   * the tree structure as well as allows breadcrumbs navigation.
+   * True by default.
    * Only applicable when mode is 'tree', 'form' or 'view'.
    */
   public navigationBar: boolean;
-  
+
   /**
-   * Adds status bar to the bottom of the editor - the status bar shows the cursor position 
-   * and a count of the selected characters. 
-   * True by default. 
+   * Adds status bar to the bottom of the editor - the status bar shows the cursor position
+   * and a count of the selected characters.
+   * True by default.
    * Only applicable when mode is 'code' or 'text'.
    */
   public statusBar: boolean;
