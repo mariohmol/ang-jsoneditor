@@ -68,6 +68,35 @@ Note : For better styling, add below line to your main style.css file
 @import "~jsoneditor/dist/jsoneditor.min.css";
 ```
 
+# Troubleshoot
+
+If you have issue with the height of the component, you can try one of those solutions:
+
+When you import CSS:
+
+```
+@import "~jsoneditor/dist/jsoneditor.min.css";
+textarea.jsoneditor-text{min-height:350px;}
+```
+
+Or Customizing the CSS:
+
+```
+:host ::ng-deep json-editor,
+:host ::ng-deep json-editor .jsoneditor,
+:host ::ng-deep json-editor > div,
+:host ::ng-deep json-editor jsoneditor-outer {
+  height: 500px;
+}
+```
+
+Or  as a inner style in component:
+
+```
+<json-editor class="col-md-12" #editorExample style="min-height: 300px;" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
+```
+
+
 # Demo
 
 Demo component files are included in Git Project.
