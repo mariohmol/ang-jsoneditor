@@ -1,5 +1,7 @@
 # Angular Json Editor
 
+[![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
+
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
 
 [StackBlitz template](https://stackblitz.com/edit/angular-json-editor)
