@@ -7,10 +7,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:app": "cpr dist/ang-jsoneditor src/ang-jsoneditor && ng build --project packages && rimraf src/ang-jsoneditor",
+    "build:app": "cp -R dist/ang-jsoneditor src/ang-jsoneditor && ng build --project packages && rimraf src/ang-jsoneditor",
     "build:lib": "rimraf dist && ng-packagr -p ang-jsoneditor/package.json",
     "publish": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
-    "test": "ng test",
+    "test": "npm run unittest && np run e2e",
+    "unittest": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "reinstall": "rm package-lock.json && rm -rf node_modules && npm i"

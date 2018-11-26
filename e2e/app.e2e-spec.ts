@@ -11,7 +11,7 @@ describe('ng-packaged App', () => {
     page.navigateTo();
     page.getParagraphText()
     .then(t => {
-      expect(t).toEqual('app works!');
+      expect(t).toEqual('Welcome to Angular Json Editor');
     });
   });
 });
