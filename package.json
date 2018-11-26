@@ -10,7 +10,7 @@
     "build:app": "cp -R dist/ang-jsoneditor src/ang-jsoneditor && ng build --project packages && rimraf src/ang-jsoneditor",
     "build:lib": "rimraf dist && ng-packagr -p ang-jsoneditor/package.json",
     "publish": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
-    "test": "ng test ang-jsoneditor --watch=false && npm run e2e",
+    "test": "ng test dev --watch=false && npm run e2e",
     "unittest": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ang-jsoneditor": {
+    "dev": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -226,7 +226,7 @@
       }
     }
   },
-  "defaultProject": "ang-jsoneditor",
+  "defaultProject": "dev",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
