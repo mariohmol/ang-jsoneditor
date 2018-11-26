@@ -8,11 +8,10 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - npm run build:lib build:app
-  - cp jsgantt.js demo/ && cp src/jsgantt.css demo/ && cd demo && http-server &  # start a Web server
   - sleep 3 # give Web server some time to bind to sockets, etc
 
 before_install:
-  - npm install -g http-server browserify webdriver-manager ng-packagr @angular/cli
+  - npm install -g webdriver-manager ng-packagr @angular/cli
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
