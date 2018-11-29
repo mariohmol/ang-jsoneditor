@@ -1,17 +1,31 @@
 import {
-  Component, ElementRef, Input, OnInit, ViewChild
+  Component, ElementRef, Input, OnInit, ViewChild,
+  Output, EventEmitter, forwardRef, ChangeDetectionStrategy
 } from '@angular/core';
 import * as editor from 'jsoneditor';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'json-editor',
-  template: '<div [id]="id" #jsonEditorContainer></div>'
+  template: '<div [id]="id" #jsonEditorContainer></div>',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => JsonEditorComponent),
+      multi: true
+    }
+  ],
+  preserveWhitespaces: false,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class JsonEditorComponent implements OnInit {
+export class JsonEditorComponent implements ControlValueAccessor, OnInit {
   private editor: any;
   public id = 'angjsoneditor' + Math.floor(Math.random() * 1000000);
+  disabled = false;
+  isFocused = false;
+
   public optionsChanged = false;
 
   @ViewChild('jsonEditorContainer') jsonEditorContainer: ElementRef;
@@ -28,16 +42,65 @@ export class JsonEditorComponent implements OnInit {
     }
   }
 
-  constructor() {
-  }
+  @Output()
+  change: EventEmitter<any> = new EventEmitter<any>();
+
+  constructor() { }
+
 
   ngOnInit() {
     let optionsBefore = this.options;
     if (!this.optionsChanged && this.editor) {
       optionsBefore = this.editor.options;
     }
+
+    if (!this.options.onChange && this.change) {
+      this.options.onChange = this.onChange.bind(this);
+    }
     this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsBefore, this._data);
   }
+
+
+  /**
+   * ngModel
+   * ControlValueAccessor
+   */
+
+  // ControlValueAccessor implementation
+  writeValue(value: any) {
+    this.data = value;
+  }
+
+  // Implemented as part of ControlValueAccessor
+  registerOnChange(fn) {
+    this.onChangeModel = fn;
+  }
+
+  // Implemented as part of ControlValueAccessor.
+  registerOnTouched(fn) {
+    this.onTouched = fn;
+  }
+
+  // Implemented as part of ControlValueAccessor.
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  // Implemented as part of ControlValueAccessor. 
+  private onTouched = () => { };
+
+  // Implemented as part of ControlValueAccessor.
+  private onChangeModel = (e) => { };
+
+  public onChange(e) {
+    this.onChangeModel(this.editor.get());
+    this.change.emit(this.editor.get());
+  }
+
+
+  /**
+   * JSON EDITOR FUNCTIONS
+   */
 
   public collapseAll() {
     this.editor.collapseAll();

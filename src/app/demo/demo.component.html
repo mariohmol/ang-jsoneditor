@@ -22,11 +22,19 @@ Random Number: {{data.randomNumber}}
 <hr/>
 
 <h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
-<div style="height:300px;">
-  <json-editor [options]="editorOptions" [data]="data" #editor></json-editor>
+
+<h3>Example with (change) and [(ngModel)] </h3>
+<div style="height:600px;">
+  <json-editor [options]="editorOptions" (change)="changeLog($event)"  [(ngModel)]="data"  #editorTwo ></json-editor>
 </div>
 
-<h3>Multiple jsoneditor</h3>
-<div style="height:600px;">
-  <json-editor [options]="editorOptions" [data]="data2" #editorTwo></json-editor>
+
+<h3>Using options and data variable </h3>
+
+<div style="height:300px;">
+  <json-editor [options]="editorOptions2" [data]="data2" #editor></json-editor>
 </div>
+
+<p>
+  {{ print(data2) }}
+</p>

@@ -10,6 +10,8 @@ export class DemoComponent implements OnInit {
 
   public editorOptions: JsonEditorOptions;
   public data: any;
+
+  public editorOptions2: JsonEditorOptions;
   public data2: any;
 
   @ViewChild('editor') editor: JsonEditorComponent;
@@ -17,7 +19,10 @@ export class DemoComponent implements OnInit {
 
   constructor() {
     this.editorOptions = new JsonEditorOptions();
-    this.initEditorOptions();
+    this.initEditorOptions(this.editorOptions);
+
+    this.editorOptions2 = new JsonEditorOptions();
+    this.initEditorOptions(this.editorOptions2)
   }
 
   ngOnInit() {
@@ -46,17 +51,22 @@ export class DemoComponent implements OnInit {
       'nedata': 'test'
     };
 
-    this.editorOptions.onChange = this.change.bind(this);
+    this.editorOptions2.onChange = this.changeLog.bind(this);
   }
 
-  change() {
+  changeLog(event = null) {
+    console.log(event);
     console.log('change:', this.editor);
     console.log('change2:', this.editorTwo);
   }
 
-  initEditorOptions() {
+  changeEvent(event) {
+    console.log(event);
+  }
+
+  initEditorOptions(editorOptions) {
     // this.editorOptions.mode = 'code'; // set only one mode
-    this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
+    editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
     // this.editorOptions.ace = (<any>window).ace.edit('editor');
   }
 
@@ -111,5 +121,9 @@ export class DemoComponent implements OnInit {
   getData() {
     const changedJson = this.editor.get();
     console.log(changedJson);
+  }
+
+  print(v) {
+    return JSON.stringify(v, null, 2);
   }
 }
