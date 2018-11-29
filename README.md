@@ -16,6 +16,13 @@ To install this library with npm, run below command:
 
 $ npm install --save jsoneditor ang-jsoneditor
 
+
+Example:
+
+```html
+<json-editor [options]="editorOptions" [(ngModel)]="data" (change)="getData($event)"></json-editor>
+```
+
 ## Usage
 
 ### Configuration
@@ -66,7 +73,7 @@ export class AppComponent {
 ```
 Note : For better styling, add below line to your main style.css file
 
-```ts
+```js
 @import "~jsoneditor/dist/jsoneditor.min.css";
 ```
 
@@ -76,14 +83,14 @@ If you have issue with the height of the component, you can try one of those sol
 
 When you import CSS:
 
-```
+```css
 @import "~jsoneditor/dist/jsoneditor.min.css";
 textarea.jsoneditor-text{min-height:350px;}
 ```
 
 Or Customizing the CSS:
 
-```
+```css
 :host ::ng-deep json-editor,
 :host ::ng-deep json-editor .jsoneditor,
 :host ::ng-deep json-editor > div,
@@ -94,7 +101,7 @@ Or Customizing the CSS:
 
 Or  as a inner style in component:
 
-```
+```html
 <json-editor class="col-md-12" #editorExample style="min-height: 300px;" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
 ```
 
