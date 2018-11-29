@@ -86,7 +86,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     this.disabled = isDisabled;
   }
 
-  // Implemented as part of ControlValueAccessor. 
+  // Implemented as part of ControlValueAccessor.
   private onTouched = () => { };
 
   // Implemented as part of ControlValueAccessor.

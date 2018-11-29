@@ -13,10 +13,12 @@
     "watch": "onchange 'ang-jsoneditor/**/*.ts' -- npm run build:lib && npm run build:libcopy",
     "build:full": "npm run build:lib && npm run build:app",
     "publish-npm": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
-    "test": "ng test dev --watch=false && npm run e2e",
-    "unittest": "ng test",
+    "test": "npm run test:dev && npm run e2e",
+    "test:dev": "ng test dev --watch=false",
+    "test:unit": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "ports": "lsof -i tcp:4201",
     "reinstall": "rm package-lock.json && rm -rf node_modules && npm i"
   },
   "dependencies": {
