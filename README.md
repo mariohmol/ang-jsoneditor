@@ -20,7 +20,7 @@ $ npm install --save jsoneditor ang-jsoneditor
 Example:
 
 ```html
-<json-editor [options]="editorOptions" [(ngModel)]="data" (change)="getData($event)"></json-editor>
+<json-editor [options]="editorOptions" [data]="data" (change)="getData($event)"></json-editor>
 ```
 
 ## Usage
