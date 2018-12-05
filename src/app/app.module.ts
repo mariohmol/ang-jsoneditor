@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { DemoComponent } from './demo/demo.component';
+import { CommonModule } from '@angular/common';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/demo', pathMatch: 'full' },
@@ -17,6 +18,7 @@ export const routes: Routes = [
     AppComponent, DemoComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
