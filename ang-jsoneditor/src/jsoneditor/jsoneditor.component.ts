@@ -176,6 +176,11 @@ export interface JsonEditorTreeNode {
   path: String[]
 }
 
+export interface IError {
+  path: (string | number)[];
+  message: string;
+}
+
 export class JsonEditorOptions {
   public ace: any;
   public ajv: Object;
@@ -183,6 +188,7 @@ export class JsonEditorOptions {
   public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
   public onError: (error: any) => void;
   public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
+  public onValidate: (json: Object) => IError[];
   public escapeUnicode: boolean;
   public sortObjectKeys: boolean;
   public history: boolean;
