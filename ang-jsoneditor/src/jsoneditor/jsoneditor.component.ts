@@ -166,6 +166,15 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
   public destroy() {
     this.editor.destroy();
   }
+
+  public isValidJson() {
+    try {
+      JSON.parse(this.getText());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 export type JsonEditorMode = 'tree' | 'view' | 'form' | 'code' | 'text';
@@ -176,6 +185,11 @@ export interface JsonEditorTreeNode {
   path: String[]
 }
 
+export interface IError {
+  path: (string | number)[];
+  message: string;
+}
+
 export class JsonEditorOptions {
   public ace: any;
   public ajv: Object;
@@ -183,6 +197,7 @@ export class JsonEditorOptions {
   public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
   public onError: (error: any) => void;
   public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
+  public onValidate: (json: Object) => IError[];
   public escapeUnicode: boolean;
   public sortObjectKeys: boolean;
   public history: boolean;
