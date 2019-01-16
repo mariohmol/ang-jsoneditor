@@ -166,6 +166,15 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
   public destroy() {
     this.editor.destroy();
   }
+
+  public isValidJson() {
+    try {
+      JSON.parse(this.getText());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 export type JsonEditorMode = 'tree' | 'view' | 'form' | 'code' | 'text';
