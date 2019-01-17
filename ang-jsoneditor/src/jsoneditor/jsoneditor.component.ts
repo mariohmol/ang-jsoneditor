@@ -58,6 +58,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
       this.options.onChange = this.onChange.bind(this);
     }
     this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsBefore, this._data);
+
+    if (this.options.expandAll) {
+      this.editor.expandAll();
+    }
   }
 
 
@@ -199,6 +203,7 @@ export class JsonEditorOptions {
   public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
   public onValidate: (json: Object) => IError[];
   public escapeUnicode: boolean;
+  public expandAll: boolean;
   public sortObjectKeys: boolean;
   public history: boolean;
   public mode: JsonEditorMode;
@@ -229,6 +234,7 @@ export class JsonEditorOptions {
 
   constructor() {
     this.escapeUnicode = false;
+    this.expandAll = false;
     this.sortObjectKeys = false;
     this.history = true;
     this.mode = 'tree';

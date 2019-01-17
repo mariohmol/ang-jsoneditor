@@ -77,6 +77,14 @@ Note : For better styling, add below line to your main style.css file
 @import "~jsoneditor/dist/jsoneditor.min.css";
 ```
 
+### Extra Features
+
+Besides all the 
+[configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md) 
+from the original jsoneditor, Angular Json Editor supports one additional option:
+
+_expandAll_ - to automatically expand all nodes upon json loaded with the _data_ input. 
+
 # Troubleshoot
 
 If you have issue with the height of the component, you can try one of those solutions:
