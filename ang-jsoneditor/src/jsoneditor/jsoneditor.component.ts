@@ -217,6 +217,12 @@ export class JsonEditorOptions {
   public languages: Object;
 
   /**
+   * Adds main menu bar - Contains format, sort, transform, search etc. functionality. True
+   * by default. Applicable in all types of mode.
+   */
+  public mainMenuBar: boolean;
+
+  /**
    * Adds navigation bar to the menu - the navigation bar visualize the current position on
    * the tree structure as well as allows breadcrumbs navigation.
    * True by default.
