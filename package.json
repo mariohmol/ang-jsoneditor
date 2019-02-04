@@ -2,6 +2,10 @@
   "name": "ang-jsoneditor",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariohmol/ang-jsoneditor"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",
