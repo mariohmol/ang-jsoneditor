@@ -67,9 +67,5 @@
     "tslib": "^1.7.1",
     "tslint": "~5.10.0",
     "typescript": "~3.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mariohmol/ang-jsoneditor"
   }
 }
