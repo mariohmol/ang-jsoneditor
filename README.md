@@ -113,6 +113,13 @@ Or  as a inner style in component:
 <json-editor class="col-md-12" #editorExample style="min-height: 300px;" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
 ```
 
+For code view you can change the height using this example:
+```css
+.ace_editor.ace-jsoneditor {
+  min-height: 500px;
+}
+```
+
 
 # Demo
 
