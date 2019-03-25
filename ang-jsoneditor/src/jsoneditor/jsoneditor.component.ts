@@ -57,7 +57,13 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     if (!this.options.onChange && this.change) {
       this.options.onChange = this.onChange.bind(this);
     }
-    this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsBefore, this._data);
+
+    const optionsCopy = Object.assign({}, optionsBefore);
+
+    // expandAll is an option only supported by ang-jsoneditor and not by the the original jsoneditor.
+    delete optionsCopy.expandAll;
+
+    this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
 
     if (this.options.expandAll) {
       this.editor.expandAll();
