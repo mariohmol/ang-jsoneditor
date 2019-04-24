@@ -4,7 +4,7 @@
 
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
 
-[StackBlitz template](https://stackblitz.com/edit/angular-json-editor)
+[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
 Working with latest Angular 6. 
 
