@@ -168,6 +168,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     this.editor.setSchema(schema);
   }
 
+  public search(query: string) {
+    this.editor.search(query);
+  }
+
   public setOptions(newOptions: JsonEditorOptions) {
     if (this.editor) {
       this.editor.destroy();
@@ -175,6 +179,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     this.optionsChanged = true;
     this.options = newOptions;
     this.ngOnInit();
+  }
+
+  public update(json: JSON) {
+    this.editor.update(json);
   }
 
   public destroy() {
