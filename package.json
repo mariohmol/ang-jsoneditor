@@ -1,6 +1,6 @@
 {
   "name": "ang-jsoneditor",
-  "version": "1.7.7",
+  "version": "1.7.8",
   "private": true,
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ports": "lsof -i tcp:4201",
-    "reinstall": "rm package-lock.json && rm -rf node_modules && npm i"
+    "reinstall": "rm package-lock.json && rm -rf node_modules && npm i",
+    "rebuildsass": "npm rebuild node-sass"
   },
   "dependencies": {
     "@angular/common": "7.1.0",
