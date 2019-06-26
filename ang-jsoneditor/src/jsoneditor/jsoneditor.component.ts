@@ -220,6 +220,8 @@ export class JsonEditorOptions {
   public onError: (error: any) => void;
   public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
   public onValidate: (json: Object) => IError[];
+  public enableSort: boolean;
+  public enableTransform: boolean;
   public escapeUnicode: boolean;
   public expandAll: boolean;
   public sortObjectKeys: boolean;
@@ -257,6 +259,8 @@ export class JsonEditorOptions {
   public statusBar: boolean;
 
   constructor() {
+    this.enableSort = true;
+    this.enableTransform = true;
     this.escapeUnicode = false;
     this.expandAll = false;
     this.sortObjectKeys = false;
