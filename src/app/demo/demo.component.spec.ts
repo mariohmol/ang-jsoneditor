@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 
 import { DemoComponent } from './demo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('DemoComponent', () => {
   let component: DemoComponent;
@@ -10,7 +11,9 @@ describe('DemoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        NgJsonEditorModule.forRoot()
+        NgJsonEditorModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule
       ],
       declarations: [ DemoComponent ]
     })

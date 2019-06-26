@@ -20,11 +20,11 @@ export const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpModule,
     NgJsonEditorModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

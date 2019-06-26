@@ -6,15 +6,16 @@ import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { AppComponent } from './app.component';
 import { routes } from './app.module';
 import { DemoComponent } from './demo/demo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         NgJsonEditorModule.forRoot(),
+        RouterTestingModule.withRoutes(routes),
         FormsModule,
-        RouterTestingModule.withRoutes(routes)
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent, DemoComponent
