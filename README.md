@@ -77,6 +77,23 @@ Note : For better styling, add below line to your main style.css file
 @import "~jsoneditor/dist/jsoneditor.min.css";
 ```
 
+
+### Forms
+
+Build it integrated with ReactiveForms:
+
+```ts 
+this.form = this.fb.group({
+  myinput: [this.data]
+});
+```
+```html
+<form  [formGroup]="form" (submit)="submit()">
+    <json-editor [options]="editorOptions2" formControlName="myinput">
+    </json-editor>
+</form>
+```
+
 ### Extra Features
 
 Besides all the 

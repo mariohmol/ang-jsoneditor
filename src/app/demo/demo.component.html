@@ -35,17 +35,14 @@ Random Number: {{data.randomNumber}}
 
 <h3>Using options and data variable </h3>
 
-<div style="height:300px;" *ngIf="form" (submit)="submit()">
-  <form  [formGroup]="form">
+<div style="height:300px;" *ngIf="form" >
+  <form  [formGroup]="form" (submit)="submit()">
     <json-editor [options]="editorOptions2" formControlName="myinput" [data]="data2" #editor></json-editor>
-
     <div *ngIf="formData">
       <h4>Form submitted</h4>
       {{ formData }}
     </div>
     <button>Submit</button>
   </form>
-
- 
 </div>
 
