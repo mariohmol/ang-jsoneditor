@@ -6,7 +6,7 @@
 <button (click)="setLanguage('en')">Language EN</button>
 <button (click)="setLanguage('pt-BR')">Language PT</button>
 <button (click)="customLanguage()">Language Custom</button>
-<hr/>
+<hr />
 
 <h3>Live Reload</h3>
 <button (click)="changeData()">New Data</button>
@@ -19,22 +19,33 @@ Random Number: {{data.randomNumber}}
 <button (click)="toggleStatus()">Status Bar</button>
 
 
-<hr/>
+<hr />
 
 <h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
 
 <h3>Example with (change)</h3>
 <div style="height:600px;">
-  <json-editor [options]="editorOptions" (change)="changeLog($event)"  [data]="data"  #editorTwo ></json-editor>
+  <json-editor [options]="editorOptions" (change)="changeLog($event)" [data]="data" #editorTwo></json-editor>
+  <p>
+    {{ print(data) }}
+  </p>
 </div>
+
 
 
 <h3>Using options and data variable </h3>
 
-<div style="height:300px;">
-  <json-editor [options]="editorOptions2" [data]="data2" #editor></json-editor>
+<div style="height:300px;" *ngIf="form" (submit)="submit()">
+  <form  [formGroup]="form">
+    <json-editor [options]="editorOptions2" formControlName="myinput" [data]="data2" #editor></json-editor>
+
+    <div *ngIf="formData">
+      <h4>Form submitted</h4>
+      {{ formData }}
+    </div>
+    <button>Submit</button>
+  </form>
+
+ 
 </div>
 
-<p>
-  {{ print(data2) }}
-</p>

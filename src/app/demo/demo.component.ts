@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
-
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
@@ -17,7 +17,10 @@ export class DemoComponent implements OnInit {
   @ViewChild('editor') editor: JsonEditorComponent;
   @ViewChild('editorTwo') editorTwo: JsonEditorComponent;
 
-  constructor() {
+  public form;
+  public formData;
+
+  constructor(public fb: FormBuilder) {
     this.editorOptions = new JsonEditorOptions();
     this.initEditorOptions(this.editorOptions);
 
@@ -26,7 +29,6 @@ export class DemoComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.data = {
       'randomNumber': 10,
       'products': [
@@ -51,7 +53,11 @@ export class DemoComponent implements OnInit {
       'nedata': 'test'
     };
 
-    this.editorOptions2.onChange = this.changeLog.bind(this);
+    this.form = this.fb.group({
+      myinput: [this.data2]
+    });
+
+    this.editorOptions.onChange = this.changeLog.bind(this);
   }
 
   changeLog(event = null) {
@@ -125,5 +131,9 @@ export class DemoComponent implements OnInit {
 
   print(v) {
     return JSON.stringify(v, null, 2);
+  }
+  submit() {
+    this.formData = JSON.stringify(this.form.value, null, 2);
+    console.log(this.form.value);
   }
 }
