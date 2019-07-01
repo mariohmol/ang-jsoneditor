@@ -6,7 +6,7 @@ Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsone
 
 [StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
-Working with latest Angular 6. 
+Working with latest Angular 8. 
 
 ![Demo Image](/src/assets/printDemo.png)
 
@@ -59,7 +59,7 @@ import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
 export class AppComponent {
   public editorOptions: JsonEditorOptions;
   public data: any;
-  @ViewChild(JsonEditorComponent) editor: JsonEditorComponent;
+  @ViewChild(JsonEditorComponent, { static: true }) editor: JsonEditorComponent;
 
   constructor() { 
     this.editorOptions = new JsonEditorOptions()

@@ -14,8 +14,8 @@ export class DemoComponent implements OnInit {
   public editorOptions2: JsonEditorOptions;
   public data2: any;
 
-  @ViewChild('editor') editor: JsonEditorComponent;
-  @ViewChild('editorTwo') editorTwo: JsonEditorComponent;
+  @ViewChild('editor', { static: true }) editor: JsonEditorComponent;
+  @ViewChild('editorTwo', { static: true }) editorTwo: JsonEditorComponent;
 
   public form;
   public formData;
