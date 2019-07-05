@@ -137,6 +137,10 @@ For code view you can change the height using this example:
 }
 ```
 
+## Internet Explorer 
+
+If you want to support IE, please follow this guide:
+* https://github.com/mariohmol/ang-jsoneditor/issues/44#issuecomment-508650610
 
 # Demo
 
