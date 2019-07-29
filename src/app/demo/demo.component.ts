@@ -11,6 +11,8 @@ export class DemoComponent implements OnInit {
   public editorOptions: JsonEditorOptions;
   public data: any;
 
+  public showData;
+
   public editorOptions2: JsonEditorOptions;
   public data2: any;
 
@@ -64,6 +66,7 @@ export class DemoComponent implements OnInit {
     console.log(event);
     console.log('change:', this.editor);
     console.log('change2:', this.editorTwo);
+    this.showData = this.editorTwo.get();
   }
 
   changeEvent(event) {

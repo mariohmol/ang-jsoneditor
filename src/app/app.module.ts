@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { DemoComponent } from './demo/demo.component';
+import { ShowComponent } from './demo/show.component';
 import { CommonModule } from '@angular/common';
 
 export const routes: Routes = [
@@ -15,7 +16,7 @@ export const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, DemoComponent
+    AppComponent, DemoComponent, ShowComponent
   ],
   imports: [
     CommonModule,
