@@ -14,6 +14,8 @@ export class DemoComponent implements OnInit {
   public editorOptions2: JsonEditorOptions;
   public data2: any;
 
+  public showData;
+
   @ViewChild('editor', { static: true }) editor: JsonEditorComponent;
   @ViewChild('editorTwo', { static: true }) editorTwo: JsonEditorComponent;
 
@@ -64,6 +66,7 @@ export class DemoComponent implements OnInit {
     console.log(event);
     console.log('change:', this.editor);
     console.log('change2:', this.editorTwo);
+    this.showData = this.editorTwo.get();
   }
 
   changeEvent(event) {
