@@ -6,6 +6,7 @@ import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { AppComponent } from './app.component';
 import { routes } from './app.module';
 import { DemoComponent } from './demo/demo.component';
+import { ShowComponent } from './demo/show.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
@@ -18,7 +19,7 @@ describe('AppComponent', () => {
         ReactiveFormsModule
       ],
       declarations: [
-        AppComponent, DemoComponent
+        AppComponent, DemoComponent, ShowComponent
       ]
     }).compileComponents();
   }));

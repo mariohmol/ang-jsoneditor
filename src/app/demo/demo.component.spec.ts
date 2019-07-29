@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 
 import { DemoComponent } from './demo.component';
+import { ShowComponent } from './show.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('DemoComponent', () => {
@@ -15,7 +17,7 @@ describe('DemoComponent', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [ DemoComponent ]
+      declarations: [ DemoComponent, ShowComponent ]
     })
     .compileComponents();
   }));
