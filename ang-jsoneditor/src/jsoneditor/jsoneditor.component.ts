@@ -50,7 +50,6 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
 
 
   ngOnInit() {
-    console.log(`ngOnInit`);
     let optionsBefore = this.options;
     if (!this.optionsChanged && this.editor) {
       optionsBefore = this.editor.options;
