@@ -1,6 +1,6 @@
 {
   "name": "ang-jsoneditor",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "private": true,
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "build:libcopy": "cp -R dist/ang-jsoneditor src/ang-jsoneditor",
     "watch": "onchange 'ang-jsoneditor/**/*.ts' -- npm run build:lib && npm run build:libcopy",
     "build:full": "npm run build:lib && npm run build:app",
-    "publish-npm": "npm run build:lib && cd dist/ang-jsoneditor && npm publish",
+    "publish-npm": "cp README.md ang-jsoneditor/README.md && npm run build:lib && cd dist/ang-jsoneditor && npm publish",
     "test": "npm run test:dev && npm run e2e",
     "test:dev": "ng test dev --watch=false",
     "test:unit": "ng test",

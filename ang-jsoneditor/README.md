@@ -4,9 +4,9 @@
 
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
 
-[StackBlitz template](https://stackblitz.com/edit/angular-json-editor)
+[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
-Working with latest Angular 6. 
+Working with latest Angular 8. 
 
 ![Demo Image](/src/assets/printDemo.png)
 
@@ -59,7 +59,7 @@ import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
 export class AppComponent {
   public editorOptions: JsonEditorOptions;
   public data: any;
-  @ViewChild(JsonEditorComponent) editor: JsonEditorComponent;
+  @ViewChild(JsonEditorComponent, { static: true }) editor: JsonEditorComponent;
 
   constructor() { 
     this.editorOptions = new JsonEditorOptions()
@@ -75,6 +75,23 @@ Note : For better styling, add below line to your main style.css file
 
 ```js
 @import "~jsoneditor/dist/jsoneditor.min.css";
+```
+
+
+### Forms
+
+Build it integrated with ReactiveForms:
+
+```ts 
+this.form = this.fb.group({
+  myinput: [this.data]
+});
+```
+```html
+<form  [formGroup]="form" (submit)="submit()">
+    <json-editor [options]="editorOptions2" formControlName="myinput">
+    </json-editor>
+</form>
 ```
 
 ### Extra Features
@@ -113,6 +130,23 @@ Or  as a inner style in component:
 <json-editor class="col-md-12" #editorExample style="min-height: 300px;" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
 ```
 
+For code view you can change the height using this example:
+```css
+.ace_editor.ace-jsoneditor {
+  min-height: 500px;
+}
+```
+
+Use debug mode to see in your console the data and options passed to jsoneditor. Copy this and paste in your issue when reporting bugs.
+
+```html
+<json-editor [debug]="true" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
+```
+
+## Internet Explorer 
+
+If you want to support IE, please follow this guide:
+* https://github.com/mariohmol/ang-jsoneditor/issues/44#issuecomment-508650610
 
 # Demo
 

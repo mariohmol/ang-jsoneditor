@@ -42,6 +42,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
       this.ngOnInit();
     }
   }
+  @Input() debug: boolean = false;
 
   @Output()
   change: EventEmitter<any> = new EventEmitter<any>();
@@ -63,7 +64,12 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
 
     // expandAll is an option only supported by ang-jsoneditor and not by the the original jsoneditor.
     delete optionsCopy.expandAll;
-
+    if (this.debug) {
+      console.log(optionsCopy, this._data);
+    }
+    if (!this.jsonEditorContainer.nativeElement) {
+      console.error(`Can't find the ElementRef reference for jsoneditor)`);
+    }
     this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
 
     if (this.options.expandAll) {

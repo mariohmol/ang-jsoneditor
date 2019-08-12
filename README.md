@@ -137,6 +137,12 @@ For code view you can change the height using this example:
 }
 ```
 
+Use debug mode to see in your console the data and options passed to jsoneditor. Copy this and paste in your issue when reporting bugs.
+
+```html
+<json-editor [debug]="true" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
+```
+
 ## Internet Explorer 
 
 If you want to support IE, please follow this guide:
