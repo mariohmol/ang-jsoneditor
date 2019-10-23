@@ -112,8 +112,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
   };
 
   public onChange(e) {
-    this.onChangeModel(this.editor.get());
-    this.change.emit(this.editor.get());
+    if (this.editor) {
+      this.onChangeModel(this.editor.get());
+      this.change.emit(this.editor.get());
+    }
   }
 
 
