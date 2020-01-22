@@ -16,8 +16,8 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/core": ">=6.0.0-rc.5",
-    "@angular/common": ">=6.0.0-rc.5",
+    "@angular/core": "*",
+    "@angular/common": "*",
     "jsoneditor": "^7.0.2"
   },
   "ngPackage": {
