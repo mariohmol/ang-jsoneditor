@@ -143,6 +143,16 @@ Use debug mode to see in your console the data and options passed to jsoneditor.
 <json-editor [debug]="true" [options]="editorOptionsData" [data]="dataStructure"></json-editor>
 ```
 
+## JSONOptions missing params
+
+If you find youself trying to use an custom option that is not mapped here, you can do:
+
+```ts
+let editorOptions: JsonEditorOptions = new JsonEditorOptions(); (<any>this.editorOptions).templates = [{menu options objects as in json editor documentation}]
+```
+
+See the [issue](https://github.com/mariohmol/ang-jsoneditor/issues/57)
+
 ## Internet Explorer 
 
 If you want to support IE, please follow this guide:

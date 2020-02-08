@@ -175,7 +175,6 @@ export class DemoComponent implements OnInit {
   }
 
   changeLog(event = null) {
-    debugger;
     console.log(event);
     console.log('change:', this.editor);
     console.log('change2:', this.editorTwo);
@@ -183,7 +182,6 @@ export class DemoComponent implements OnInit {
   }
 
   changeEvent(event) {
-    debugger;
     console.log(event);
   }
 

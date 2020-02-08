@@ -33,6 +33,7 @@ export class JsonEditorOptions {
     public schema: Object;
     public search: boolean;
     public indentation: Number;
+    public template: Object;
     public theme: Number;
     public language: String;
     public languages: Object;
