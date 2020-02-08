@@ -1,7 +1,7 @@
 {
   "name": "ang-jsoneditor",
-  "version": "1.9.0",
-  "private": true,
+  "version": "1.9.1",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/mariohmol/ang-jsoneditor"

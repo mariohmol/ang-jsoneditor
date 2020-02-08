@@ -123,7 +123,6 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  
   public onChangeJSON(e) {
     if (this.editor) {
       this.jsonChange.emit(this.editor.get());
