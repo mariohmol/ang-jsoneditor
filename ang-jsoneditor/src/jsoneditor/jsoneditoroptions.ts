@@ -16,6 +16,7 @@ export class JsonEditorOptions {
     public ace: any;
     public ajv: Object;
     public onChange: () => void;
+    public onChangeJSON: () => void;
     public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
     public onError: (error: any) => void;
     public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;

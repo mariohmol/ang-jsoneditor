@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NgJsonEditorModule } from 'ang-jsoneditor';
+import { NgJsonEditorModule } from '../../ang-jsoneditor/src/public_api';
 import { DemoComponent } from './demo/demo.component';
 import { ShowComponent } from './demo/show.component';
 import { CommonModule } from '@angular/common';
