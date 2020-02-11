@@ -16,11 +16,43 @@ export class DemoComponent implements OnInit {
 
   public showData;
 
+  public EditedData;
+
   @ViewChild('editor', { static: true }) editor: JsonEditorComponent;
   @ViewChild('editorTwo', { static: true }) editorTwo: JsonEditorComponent;
 
   public form;
   public formData;
+
+  dataMulti: any = {
+    products: [{
+      name: 'car',
+      product: [{
+        name: 'honda',
+        model: [
+          { id: 'civic', name: 'civic' },
+          { id: 'accord', name: 'accord' },
+          { id: 'crv', name: 'crv' },
+          { id: 'pilot', name: 'pilot' },
+          { id: 'odyssey', name: 'odyssey' }
+        ]
+      }]
+    },
+    {
+      name: 'book',
+      product: [{
+        name: 'dostoyevski',
+        model: [
+          { id: 'Axe', name: 'Axe' },
+          { id: 'accord', name: 'accord' },
+          { id: 'crv', name: 'crv' },
+          { id: 'pilot', name: 'pilot' },
+          { id: 'odyssey', name: 'odyssey' }
+        ]
+      }]
+    }
+    ]
+  };
 
   constructor(public fb: FormBuilder) {
     this.editorOptions = new JsonEditorOptions();
@@ -250,5 +282,14 @@ export class DemoComponent implements OnInit {
   submit() {
     this.formData = JSON.stringify(this.form.value, null, 2);
     console.log(this.form.value);
+  }
+
+  showJson(d) {
+    console.log(d)
+    this.EditedData =  JSON.stringify(d, null, 2);
+  }
+
+  makeOptions = () => {
+    return new JsonEditorOptions();
   }
 }
