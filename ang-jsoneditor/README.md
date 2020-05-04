@@ -158,6 +158,24 @@ See the [issue](https://github.com/mariohmol/ang-jsoneditor/issues/57)
 If you want to support IE, please follow this guide:
 * https://github.com/mariohmol/ang-jsoneditor/issues/44#issuecomment-508650610
 
+## Multiple editors
+
+To use multiple jsoneditors in your view you cannot use the same editor options.
+
+You should have something like: 
+
+```html
+<div *ngFor="let prd of data.products" class="w-100-p p-24" >
+  <json-editor [options]="makeOptions()" [data]="prd" (change)="showJson($event)"></json-editor>
+</div>
+```
+
+```ts
+makeOptions = () => {
+  return new JsonEditorOptions();
+}
+```
+
 # Demo
 
 Demo component files are included in Git Project.

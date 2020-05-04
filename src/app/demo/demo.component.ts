@@ -176,7 +176,7 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.data = {
-      'randomNumber': 10,
+      'randomNumber': 2,
       'products': [
         {
           'name': 'car',
@@ -203,7 +203,7 @@ export class DemoComponent implements OnInit {
       myinput: [this.data2]
     });
 
-    //this.editorOptions.onChange = this.changeLog.bind(this);
+    // this.editorOptions.onChange = this.changeLog.bind(this);
   }
 
   changeLog(event = null) {
@@ -260,12 +260,12 @@ export class DemoComponent implements OnInit {
   }
 
   changeObject() {
-    this.data.randomNumber = Math.random() * 100;
+    this.data.randomNumber = Math.floor(Math.random() * 8);
   }
 
   changeData() {
     this.data = Object.assign({}, this.data,
-      { randomNumber: Math.random() * 100 });
+      { randomNumber: Math.floor(Math.random() * 8) });
   }
 
   /**
