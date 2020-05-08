@@ -29,7 +29,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
 
   public optionsChanged = false;
 
-  @ViewChild('jsonEditorContainer', { static: true }) jsonEditorContainer: ElementRef;
+  @ViewChild('jsonEditorContainer', { static: false }) jsonEditorContainer: ElementRef;
 
   private _data: Object = {};
 

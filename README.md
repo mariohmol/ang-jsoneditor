@@ -59,7 +59,7 @@ import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
 export class AppComponent {
   public editorOptions: JsonEditorOptions;
   public data: any;
-  @ViewChild(JsonEditorComponent, { static: true }) editor: JsonEditorComponent;
+  @ViewChild(JsonEditorComponent, { static: false }) editor: JsonEditorComponent;
 
   constructor() { 
     this.editorOptions = new JsonEditorOptions()
