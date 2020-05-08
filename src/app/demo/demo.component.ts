@@ -18,6 +18,8 @@ export class DemoComponent implements OnInit {
 
   public EditedData;
 
+  public show = false;
+
   @ViewChild('editor', { static: false }) editor: JsonEditorComponent;
   @ViewChild('editorTwo', { static: false }) editorTwo: JsonEditorComponent;
 
@@ -56,7 +58,7 @@ export class DemoComponent implements OnInit {
 
   constructor(public fb: FormBuilder) {
     this.editorOptions = new JsonEditorOptions();
-    this.editorOptions.schema ={
+    this.editorOptions.schema = {
       'definitions': {},
       '$schema': 'http://json-schema.org/draft-07/schema#',
       '$id': 'http://example.com/root.json',
@@ -75,7 +77,7 @@ export class DemoComponent implements OnInit {
           'examples': [
             10
           ],
-          'enum':[1,2,3,4,5,6,7,8]
+          'enum': [1, 2, 3, 4, 5, 6, 7, 8]
         },
         'products': {
           '$id': '#/properties/products',
@@ -286,7 +288,7 @@ export class DemoComponent implements OnInit {
 
   showJson(d) {
     console.log(d)
-    this.EditedData =  JSON.stringify(d, null, 2);
+    this.EditedData = JSON.stringify(d, null, 2);
   }
 
   makeOptions = () => {
