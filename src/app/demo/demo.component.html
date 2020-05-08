@@ -46,7 +46,7 @@ Random Number: {{data.randomNumber}}
 
 
 <h2>Multi json in a loop</h2>
-<button (click)="show=true">Show Json Editors</button>
+<button (click)="show=!show">Show/Hide Json Editors</button>
 <div *ngIf="show === true">
   <div *ngFor="let prd of dataMulti.products" class="w-100-p p-24">
     <json-editor [options]="makeOptions()" [data]="prd" (change)="showJson($event)"></json-editor>
