@@ -47,7 +47,7 @@ export class JsonEditorOptions {
 //     passing the changed contents
 //     as stringified JSON.
 */
-  public onChangeText: () => void;
+  public onChangeText: (jsonstr:string) => void;
 
 
   /**
