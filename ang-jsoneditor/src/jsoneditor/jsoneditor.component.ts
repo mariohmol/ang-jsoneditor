@@ -61,7 +61,6 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     if (!this.options.onChangeJSON && this.jsonChange) {
       this.options.onChangeJSON = this.onChangeJSON.bind(this);
     }
-
     if (!this.options.onChange && this.change) {
       this.options.onChange = this.onChange.bind(this);
     }
@@ -74,6 +73,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     }
     if (!this.jsonEditorContainer.nativeElement) {
       console.error(`Can't find the ElementRef reference for jsoneditor)`);
+    }
+
+    if (optionsCopy.mode === 'text' || optionsCopy.mode === 'code') {
+      optionsCopy.onChangeJSON = null;
     }
     this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
 

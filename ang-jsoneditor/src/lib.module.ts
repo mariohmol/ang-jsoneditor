@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class NgJsonEditorModule {
 
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<any> {
 
     return {
       ngModule: NgJsonEditorModule,
