@@ -16,9 +16,6 @@ export class JsonEditorOptions {
   public ace: any;
   public ajv: Object;
 
-  public onNodeName: () => void;
-  public onCreateMenu: () => void;
-  public onColorPicker: () => void;
 
   /**
    *   {function} onChange  Callback method, triggered
@@ -30,22 +27,27 @@ export class JsonEditorOptions {
   public onChange: () => void;
 
   /**
-  *   // {function} onChangeJSON  Callback method, triggered
-  //     in modes on change of contents,
-  //     passing the changed contents
-  //     as JSON.
-  //     Only applicable for modes
-  //     'tree', 'view', and 'form'.
-  */
+*   // {function} onChangeJSON  Callback method, triggered
+//     in modes on change of contents,
+//     passing the changed contents
+//     as JSON.
+//     Only applicable for modes
+//     'tree', 'view', and 'form'.
+*/
   public onChangeJSON: () => void;
 
+
+  public onNodeName: () => void;
+  public onCreateMenu: () => void;
+  public onColorPicker: () => void;
+
   /**
-  *   // {function} onChangeText  Callback method, triggered
-  //     in modes on change of contents,
-  //     passing the changed contents
-  //     as stringified JSON.
-  */
-  public onChangeText: () => void;
+*   // {function} onChangeText  Callback method, triggered
+//     in modes on change of contents,
+//     passing the changed contents
+//     as stringified JSON.
+*/
+  public onChangeText: (jsonstr:string) => void;
 
 
   /**
