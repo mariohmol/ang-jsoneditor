@@ -109,6 +109,8 @@ export class JsonEditorOptions {
   public onError: (error: any) => void;
   public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
   public onValidate: (json: Object) => IError[];
+  public onValidationError: (errors: object[]) => void;
+
   public enableSort: boolean;
   public enableTransform: boolean;
   public escapeUnicode: boolean;

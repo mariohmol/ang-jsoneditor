@@ -189,8 +189,8 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     return this.editor.validateSchema;
   }
 
-  public setSchema(schema: any) {
-    this.editor.setSchema(schema);
+  public setSchema(schema: any, schemaRefs: any) {
+    this.editor.setSchema(schema, schemaRefs);
   }
 
   public search(query: string) {
