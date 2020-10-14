@@ -1,5 +1,5 @@
 import {
-  Component, ElementRef, Input, OnInit, ViewChild,
+  Component, ElementRef, Input, OnInit, OnDestroy, ViewChild,
   Output, EventEmitter, forwardRef, ChangeDetectionStrategy
 } from '@angular/core';
 import * as editor from 'jsoneditor';
@@ -21,7 +21,7 @@ import { JsonEditorOptions, JsonEditorMode, JsonEditorTreeNode, IError } from '.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class JsonEditorComponent implements ControlValueAccessor, OnInit {
+export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
   private editor: any;
   public id = 'angjsoneditor' + Math.floor(Math.random() * 1000000);
   disabled = false;
@@ -83,6 +83,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit {
     if (this.options.expandAll) {
       this.editor.expandAll();
     }
+  }
+
+  ngOnDestroy() {
+    this.destroy();
   }
 
 
