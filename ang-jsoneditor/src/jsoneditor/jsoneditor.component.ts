@@ -231,6 +231,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     this.editor.destroy();
   }
 
+  public getEditor(){
+    return this.editor;
+  }
+
   public isValidJson() {
     try {
       JSON.parse(this.getText());

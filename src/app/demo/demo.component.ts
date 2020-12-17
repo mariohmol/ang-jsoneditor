@@ -212,7 +212,22 @@ export class DemoComponent implements OnInit {
     console.log(event);
     console.log('change:', this.editor);
     console.log('change2:', this.editorTwo);
-    this.showData = this.editorTwo.get();
+
+
+
+    /**
+     * Manual validation based on the schema 
+     * if the change does not meet the JSON Schema, it will use the last data
+     * and will revert the user change.
+     */
+    const editorJson = this.editor.getEditor()
+    editorJson.validate()
+    const errors = editorJson.validateSchema.errors
+    if (errors && errors.length > 0) {
+      editorJson.set(this.showData);
+    } else {
+      this.showData = this.editor.get();
+    }
   }
 
   changeEvent(event) {

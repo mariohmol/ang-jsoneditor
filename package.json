@@ -39,7 +39,7 @@
     "core-js": "^3.6.4",
     "jsoneditor": "^8.3.0",
     "rxjs": "*",
-    "webpack": "*",
+    "webpack": "^4.0.0",
     "zone.js": "^0.10.3"
   },
   "devDependencies": {
