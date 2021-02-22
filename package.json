@@ -1,6 +1,6 @@
 {
   "name": "ang-jsoneditor",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "private": false,
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "build:libcopy": "cp -R dist/ang-jsoneditor src/ang-jsoneditor",
     "watch": "onchange 'ang-jsoneditor/**/*.ts' -- npm run build:lib && npm run build:libcopy",
     "build:full": "npm run build:lib && npm run build:app",
-    "publish-npm": "cp README.md ang-jsoneditor/README.md && npm run build:lib && cd dist/ang-jsoneditor && npm publish",
+    "publishnpm": "cp README.md ang-jsoneditor/README.md && npm run build:lib && cd dist/ang-jsoneditor && npm publish",
     "unpublish": "npm deprecate -f 'ang-jsoneditor@1.9.3' 'this package has been deprecated'",
     "test": "npm run test:dev && npm run e2e",
     "test:dev": "ng test dev --watch=false",
@@ -37,7 +37,7 @@
     "@angular/platform-browser-dynamic": "10.0.8",
     "@angular/router": "10.0.8",
     "core-js": "^3.6.4",
-    "jsoneditor": "^8.3.0",
+    "jsoneditor": "^9.1.8",
     "rxjs": "*",
     "webpack": "^4.0.0",
     "zone.js": "^0.10.3"

@@ -185,5 +185,14 @@ Demo Project with a lot of different implementations (ngInit, change event and o
 
 When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/developers
 
+# Collaborate
+
+Fork, clone this repo and install dependencies:
+
+```sh
+npm i -g rimraf
+npm i
+```
+
 # License
 MIT(./LICENSE)
