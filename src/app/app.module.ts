@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgJsonEditorModule } from '../../ang-jsoneditor/src/public_api';
@@ -21,11 +20,10 @@ export const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    HttpModule,
     NgJsonEditorModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
