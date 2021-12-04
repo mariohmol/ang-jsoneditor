@@ -1,36 +1,39 @@
 # Angular Json Editor
 
-[![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
+## About this repository
+This is a fork of mariohmol's [ang-jsoneditor](https://github.com/mariohmol/ang-jsoneditor)
+with support for Angular 12 and 13.
+This repository will probably become stale, 
+when the original will be actively maintained again.
 
-Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
+## About the project
 
-[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
+Angular wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)).
+A library with that you cna view and edit json content interactively.
 
-Working with latest Angular 9. 
-
-![Demo Image](/src/assets/printDemo.png)
+![Demo Image](src/assets/printDemo.png)
 
 ## Installation
 
 To install this library with npm, run below command:
 
-$ npm install --save jsoneditor ang-jsoneditor
+|Compatibility|Command|Stability|
+|---|---|---|
+|Angular 12|`npm install @maaxgr/ang-jsoneditor@2.0.0`|Stable|
+|Angular 13|...|Work in Progress|
 
+**WARNING:** Although Version 2.0.0 is marked as stable,
+there can be still bugs because this project isn't heavily integrated in a lot of produuction projects 
 
-Example:
-
-```html
-<json-editor [options]="editorOptions" [data]="data" (change)="getData($event)"></json-editor>
-```
 
 ## Usage
 
-### Configuration
+### Minimal Example
 
-First, Import Angular  JsonEditor module in root
+First import `NgJsonEditorModule`-Module in module.ts:
 
 ```ts
-import { NgJsonEditorModule } from 'ang-jsoneditor' 
+import { NgJsonEditorModule } from '@maaxgr/ang-jsoneditor' 
 
 @NgModule({
   declarations: [
@@ -45,50 +48,60 @@ import { NgJsonEditorModule } from 'ang-jsoneditor'
 })
 export class AppModule { }
 ```
-Then setup your component models as below :
 
+Then setup your component models as below:
 ```ts
-import { Component, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
+import {Component} from '@angular/core';
+import {JsonEditorOptions} from "@maaxgr/ang-jsoneditor";
 
 @Component({
   selector: 'app-root',
-  template: '<json-editor [options]="editorOptions" [data]="data"></json-editor>',
-  styleUrls: ['./app.component.css']
+  template: '<json-editor [options]="editorOptions" [data]="initialData" (change)="showJson($event)"></json-editor>' +
+    '<div>{{ visibleData | json }}</div>'
 })
 export class AppComponent {
-  public editorOptions: JsonEditorOptions;
-  public data: any;
-  @ViewChild(JsonEditorComponent, { static: false }) editor: JsonEditorComponent;
 
-  constructor() { 
+  public editorOptions: JsonEditorOptions;
+  public initialData: any;
+  public visibleData: any;
+
+  constructor() {
     this.editorOptions = new JsonEditorOptions()
-    this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
-    //this.options.mode = 'code'; //set only one mode
-      
-      this.data = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
+    this.editorOptions.modes = ['code', 'text', 'tree', 'view'];
+
+    this.initialData = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
+    this.visibleData = this.initialData;
+  }
+
+  showJson(d: Event) {
+    this.visibleData = d;
   }
 
 }
 ```
-Note : For better styling, add below line to your main style.css file
 
+Add Style to style.scss:
 ```js
 @import "~jsoneditor/dist/jsoneditor.min.css";
 ```
 
+### Access Component
+
+For deeper configuration, add this to component.ts:
+```ts
+@ViewChild(JsonEditorComponent, { static: false }) editor!: JsonEditorComponent;
+```
 
 ### Forms
 
 Build it integrated with ReactiveForms:
-
 ```ts 
 this.form = this.fb.group({
   myinput: [this.data]
 });
 ```
 ```html
-<form  [formGroup]="form" (submit)="submit()">
+<form [formGroup]="form" (submit)="submit()">
     <json-editor [options]="editorOptions2" formControlName="myinput">
     </json-editor>
 </form>
@@ -100,7 +113,7 @@ Besides all the
 [configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md) 
 from the original jsoneditor, Angular Json Editor supports one additional option:
 
-_expandAll_ - to automatically expand all nodes upon json loaded with the _data_ input. 
+=> `expandAll`: to automatically expand all nodes upon json loaded with the _data_ input. 
 
 # Troubleshoot
 
@@ -188,9 +201,7 @@ When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/deve
 # Collaborate
 
 Fork, clone this repo and install dependencies:
-
 ```sh
-npm i -g rimraf
 npm i
 ```
 

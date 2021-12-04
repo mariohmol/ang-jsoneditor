@@ -1,10 +1,10 @@
 {
-  "name": "ang-jsoneditor",
-  "version": "1.10.5",
+  "name": "@maaxgr/ang-jsoneditor",
+  "version": "2.0.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mariohmol/ang-jsoneditor"
+    "url": "https://github.com/MaaxGr/ang-jsoneditor"
   },
   "license": "MIT",
   "scripts": {

@@ -1,13 +1,13 @@
 {
-  "name": "ang-jsoneditor",
-  "version": "1.10.5",
+  "name": "@maaxgr/ang-jsoneditor",
+  "version": "2.0.0",
   "license": "MIT",
-  "homepage": "https://github.com/mariohmol/ang-jsoneditor",
+  "homepage": "https://github.com/MaaxGr/ang-jsoneditor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mariohmol/ang-jsoneditor.git"
+    "url": "https://github.com/MaaxGr/ang-jsoneditor"
   },
-  "author": "Mario Mol <mariohmol@gmail.com>, Manish Sodavadiya <manish_it56@yahoo.com>",
+  "author": "Max Großmann <github@maax.gr>, Mario Mol <mariohmol@gmail.com>, Manish Sodavadiya <manish_it56@yahoo.com>",
   "keywords": [
     "angular",
     "jsoneditor",
