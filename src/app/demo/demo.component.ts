@@ -63,6 +63,9 @@ export class DemoComponent implements OnInit {
 
     this.initEditorOptions(this.editorOptions);
 
+    // code, text, tree, form and view
+    this.editorOptions.mode = 'view'
+
     this.editorOptions2 = new JsonEditorOptions();
     this.initEditorOptions(this.editorOptions2)
   }
