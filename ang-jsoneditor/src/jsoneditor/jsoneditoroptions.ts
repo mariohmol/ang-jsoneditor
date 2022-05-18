@@ -98,7 +98,7 @@ export class JsonEditorOptions {
 // modes 'form', 'tree' and
 // 'view'
 */
-  public onClassName: () => void;
+  public onClassName: (node: JsonEditorTreeNode) => void;
 
   public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
 
