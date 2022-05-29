@@ -17,14 +17,14 @@ A library with that you cna view and edit json content interactively.
 
 To install this library with npm, run below command:
 
-|Compatibility|Command|Stability|
-|---|---|---|
-|Angular 11|`npm install @maaxgr/ang-jsoneditor@11`|Stable|
-|Angular 12|`npm install @maaxgr/ang-jsoneditor@12`|Stable|
-|Angular 13|...|Work in Progress|
+|Compatibility| Command                                 | Stability |
+|---|-----------------------------------------|-----------|
+|Angular 11| `npm install @maaxgr/ang-jsoneditor@11` | Stable    |
+|Angular 12| `npm install @maaxgr/ang-jsoneditor@12` | Stable    |
+|Angular 13| `npm install @maaxgr/ang-jsoneditor@13` | Stable    |
 
-**WARNING:** Although Version 2.0.0 is marked as stable,
-there can be still bugs because this project isn't heavily integrated in a lot of produuction projects 
+**WARNING:** Although versions are marked as stable,
+there can be still bugs because this project isn't heavily integrated in a lot of production projects 
 
 
 ## Usage
