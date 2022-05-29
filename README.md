@@ -3,15 +3,15 @@
 ## About this repository
 This is a fork of mariohmol's [ang-jsoneditor](https://github.com/mariohmol/ang-jsoneditor)
 with support for Angular 11, 12 and 13.
-This repository will probably become stale, 
+This repository will probably become stale,
 when the original will be actively maintained again.
 
 ## About the project
 
 Angular wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)).
-A library with that you cna view and edit json content interactively.
+A library with that you can view and edit json content interactively.
 
-![Demo Image](src/assets/printDemo.png)
+![Demo Image](projects/docs/images/demo.png)
 
 ## Installation
 
@@ -24,17 +24,20 @@ To install this library with npm, run below command:
 |Angular 13| `npm install @maaxgr/ang-jsoneditor@13` | Stable    |
 
 **WARNING:** Although versions are marked as stable,
-there can be still bugs because this project isn't heavily integrated in a lot of production projects 
+there can be still bugs because this project isn't heavily integrated in a lot of production projects
 
 
 ## Usage
 
 ### Minimal Example
 
-First import `NgJsonEditorModule`-Module in module.ts:
+First import Module in module.ts:
 
 ```ts
-import { NgJsonEditorModule } from '@maaxgr/ang-jsoneditor' 
+// For Angular 11 + 12 
+import { NgJsonEditorModule } from '@maaxgr/ang-jsoneditor'
+// Starting Angular 13
+import { AngJsoneditorModule } from '@maaxgr/ang-jsoneditor'
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { NgJsonEditorModule } from '@maaxgr/ang-jsoneditor'
   ],
   imports: [
     ....,
-    NgJsonEditorModule
+    // For Angular 11 + 12 
+    NgJsonEditorModule,
+    // Starting Angular 13
+    AngJsoneditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -110,11 +116,11 @@ this.form = this.fb.group({
 
 ### Extra Features
 
-Besides all the 
-[configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md) 
+Besides all the
+[configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md)
 from the original jsoneditor, Angular Json Editor supports one additional option:
 
-=> `expandAll`: to automatically expand all nodes upon json loaded with the _data_ input. 
+=> `expandAll`: to automatically expand all nodes upon json loaded with the _data_ input.
 
 # Troubleshoot
 
@@ -167,7 +173,7 @@ let editorOptions: JsonEditorOptions = new JsonEditorOptions(); (<any>this.edito
 
 See the [issue](https://github.com/mariohmol/ang-jsoneditor/issues/57)
 
-## Internet Explorer 
+## Internet Explorer
 
 If you want to support IE, please follow this guide:
 * https://github.com/mariohmol/ang-jsoneditor/issues/44#issuecomment-508650610
@@ -176,7 +182,7 @@ If you want to support IE, please follow this guide:
 
 To use multiple jsoneditors in your view you cannot use the same editor options.
 
-You should have something like: 
+You should have something like:
 
 ```html
 <div *ngFor="let prd of data.products" class="w-100-p p-24" >
@@ -192,19 +198,13 @@ makeOptions = () => {
 
 # Demo
 
-Demo component files are included in Git Project.
-
-Demo Project with a lot of different implementations (ngInit, change event and others):
-[https://github.com/mariohmol/ang-jsoneditor/tree/master/src/app/demo)
-
-When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/developers
+Demo component files are included in Git Project under `projects/demo`.  
+An explanation how to start the demo is in the [Local Development](projects/docs/local-development.md)-Guide
 
 # Collaborate
 
-Fork, clone this repo and install dependencies:
-```sh
-npm i
-```
+See [Local Development](projects/docs/local-development.md)
+
 
 # License
-MIT(./LICENSE)
+[MIT](./LICENSE)

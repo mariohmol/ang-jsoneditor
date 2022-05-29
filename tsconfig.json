@@ -1,26 +1,38 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "ang-jsoneditor": [
+        "dist/ang-jsoneditor/ang-jsoneditor",
+        "dist/ang-jsoneditor"
+      ]
+    },
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "baseUrl": "src",
+    "forceConsistentCasingInFileNames": true,
+//    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
     "lib": [
-      "es2017",
+      "es2020",
       "dom"
-    ],
-    "paths": {
-      "ang-jsoneditor": [ "dist/ang-jsoneditor" ]
-    }
+    ]
   },
-  "exclude": [
-    ".ng_build"
-  ]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+//    "strictInjectionParameters": true,
+//    "strictInputAccessModifiers": true,
+//    "strictTemplates": true
+  }
 }
