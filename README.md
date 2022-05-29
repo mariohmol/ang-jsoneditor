@@ -15,7 +15,15 @@ A library with that you can view and edit json content interactively.
 
 ## Installation
 
-To install this library with npm, run below command:
+### 1. Install "jsoneditor"
+
+The wrapped library is not packaged in this library.  
+You have to install it via
+`npm i jsoneditor@9.7`
+
+### 2. Install this wrapper library
+
+To install this library with npm, run one of the command below:
 
 |Compatibility| Command                                 | Stability |
 |---|-----------------------------------------|-----------|
@@ -25,7 +33,6 @@ To install this library with npm, run below command:
 
 **WARNING:** Although versions are marked as stable,
 there can be still bugs because this project isn't heavily integrated in a lot of production projects
-
 
 ## Usage
 
