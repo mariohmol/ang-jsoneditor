@@ -5,7 +5,7 @@
     "serve:demo": "cd projects/demo && ng serve",
     "build:lib": "ng build ang-jsoneditor",
     "watch:lib": "ng build ang-jsoneditor --watch",
-    "publish": "cp README.md projects/ang-jsoneditor/ && npm run build:lib && cd dist/ang-jsoneditor && npm publish && rm projects/ang-jsoneditor/README.md"
+    "publish": "cp README.md projects/ang-jsoneditor/ && npm run build:lib && cd dist/ang-jsoneditor && npm publish && rm README.md"
   },
   "private": true,
   "dependencies": {
