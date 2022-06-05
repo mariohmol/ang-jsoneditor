@@ -82,7 +82,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     if (optionsCopy.mode === 'text' || optionsCopy.mode === 'code') {
       optionsCopy.onChangeJSON = null;
     }
-    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy);
+    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
 
     if (this.options.expandAll) {
       this.editor.expandAll();
