@@ -229,7 +229,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public destroy() {
-    this.editor.destroy();
+    this.editor?.destroy();
   }
 
   public getEditor(){
