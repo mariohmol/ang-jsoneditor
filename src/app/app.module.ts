@@ -23,7 +23,7 @@ export const routes: Routes = [
     BrowserModule,
     HttpModule,
     NgJsonEditorModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     FormsModule,
     ReactiveFormsModule
   ],
