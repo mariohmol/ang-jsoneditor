@@ -9,6 +9,9 @@ import { schema } from './schema.value';
 })
 export class DemoComponent implements OnInit {
 
+  @ViewChild('editor', { static: false }) editor: JsonEditorComponent;
+  @ViewChild('editorTwo', { static: false }) editorTwo: JsonEditorComponent;
+
   public editorOptions: JsonEditorOptions;
   public data: any;
 
@@ -16,14 +19,8 @@ export class DemoComponent implements OnInit {
   public data2: any;
 
   public showData;
-
-  public EditedData;
-
+  public editedData;
   public show = false;
-
-  @ViewChild('editor', { static: false }) editor: JsonEditorComponent;
-  @ViewChild('editorTwo', { static: false }) editorTwo: JsonEditorComponent;
-
   public form;
   public formData;
 
@@ -72,18 +69,18 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.showData = this.data = {
-      'randomNumber': 2,
-      'products': [
+      randomNumber: 2,
+      products: [
         {
-          'name': 'car',
-          'product':
+          name: 'car',
+          product:
             [
               {
-                'name': 'honda',
-                'model': [
-                  { 'id': 'civic', 'name': 'civic' },
-                  { 'id': 'accord', 'name': 'accord' }, { 'id': 'crv', 'name': 'crv' },
-                  { 'id': 'pilot', 'name': 'pilot' }, { 'id': 'odyssey', 'name': 'odyssey' }
+                name: 'honda',
+                model: [
+                  { id: 'civic', name: 'civic' },
+                  { id: 'accord', name: 'accord' }, { id: 'crv', name: 'crv' },
+                  { id: 'pilot', name: 'pilot' }, { id: 'odyssey', name: 'odyssey' }
                 ]
               }
             ]
@@ -92,7 +89,7 @@ export class DemoComponent implements OnInit {
     };
 
     this.data2 = {
-      'nedata': 'test'
+      nedata: 'test'
     };
 
     this.form = this.fb.group({
@@ -108,7 +105,7 @@ export class DemoComponent implements OnInit {
     console.log('change2:', this.editorTwo);
 
     /**
-     * Manual validation based on the schema 
+     * Manual validation based on the schema
      * if the change does not meet the JSON Schema, it will use the last data
      * and will revert the user change.
      */
@@ -139,6 +136,7 @@ export class DemoComponent implements OnInit {
   }
 
   setAce() {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const aceEditor = (<any>window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
     // custom your ace here
     aceEditor.setReadOnly(true);
@@ -159,11 +157,12 @@ export class DemoComponent implements OnInit {
 
   customLanguage() {
     this.editorOptions.languages = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       'pt-BR': {
-        'auto': 'Automático testing'
+        auto: 'Automático testing'
       },
-      'en': {
-        'auto': 'Auto testing'
+      en: {
+        auto: 'Auto testing'
       }
     };
     this.editor.setOptions(this.editorOptions);
@@ -196,10 +195,8 @@ export class DemoComponent implements OnInit {
 
   showJson(d) {
     console.log(d)
-    this.EditedData = JSON.stringify(d, null, 2);
+    this.editedData = JSON.stringify(d, null, 2);
   }
 
-  makeOptions = () => {
-    return new JsonEditorOptions();
-  }
+  makeOptions = () => new JsonEditorOptions()
 }

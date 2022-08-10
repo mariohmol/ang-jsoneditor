@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 
 export type JsonEditorMode = 'tree' | 'view' | 'form' | 'code' | 'text';
 
@@ -27,13 +28,13 @@ export class JsonEditorOptions {
   public onChange: () => void;
 
   /**
-*   // {function} onChangeJSON  Callback method, triggered
+   *   // {function} onChangeJSON  Callback method, triggered
 //     in modes on change of contents,
 //     passing the changed contents
 //     as JSON.
 //     Only applicable for modes
 //     'tree', 'view', and 'form'.
-*/
+   */
   public onChangeJSON: () => void;
 
 
@@ -42,12 +43,12 @@ export class JsonEditorOptions {
   public onColorPicker: () => void;
 
   /**
-*   // {function} onChangeText  Callback method, triggered
-//     in modes on change of contents,
-//     passing the changed contents
-//     as stringified JSON.
-*/
-  public onChangeText: (jsonstr:string) => void;
+  // {function} onChangeText  Callback method, triggered
+  //     in modes on change of contents,
+  //     passing the changed contents
+  //     as stringified JSON.
+   */
+  public onChangeText: (jsonstr: string) => void;
 
 
   /**
@@ -59,10 +60,10 @@ export class JsonEditorOptions {
   public onSelectionChange: () => void;
 
   /**
-*     {function} onTextSelectionChange Callback method,
+   *     {function} onTextSelectionChange Callback method,
   triggered on text selection change
   Only applicable for modes
-*/
+   */
   public onTextSelectionChange: () => void;
 
 
@@ -77,11 +78,11 @@ export class JsonEditorOptions {
   public onEvent: () => void;
 
   /**
-* // *   {function} onFocus  Callback method, triggered
+   * // *   {function} onFocus  Callback method, triggered
 //  when the editor comes into focus,
 //  passing an object {type, target},
 //  Applicable for all modes
-*/
+   */
   public onFocus: () => void;
 
   // *   {function} onBlur   Callback method, triggered
@@ -91,13 +92,13 @@ export class JsonEditorOptions {
   public onBlur: () => void;
 
   /**
-*  // *   {function} onClassName Callback method, triggered
+   *  // *   {function} onClassName Callback method, triggered
 // when a Node DOM is rendered. Function returns
 // a css class name to be set on a node.
 // Only applicable for
 // modes 'form', 'tree' and
 // 'view'
-*/
+   */
   public onClassName: (node: JsonEditorTreeNode) => void;
 
   public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
