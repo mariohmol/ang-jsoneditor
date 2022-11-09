@@ -7,7 +7,7 @@
     "watch:lib": "ng build ang-jsoneditor --watch",
     "publish": "cp README.md projects/ang-jsoneditor/ && npm run build:lib && cd dist/ang-jsoneditor && npm publish && rm README.md"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^14.2.8",
     "@angular/common": "^14.2.8",
