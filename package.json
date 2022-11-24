@@ -1,11 +1,11 @@
 {
-  "name": "ang-jsoneditor",
+  "name": "angular-jsoneditor",
   "version": "0.0.0",
   "scripts": {
     "serve:demo": "cd projects/demo && ng serve",
-    "build:lib": "ng build ang-jsoneditor",
-    "watch:lib": "ng build ang-jsoneditor --watch",
-    "publish": "cp README.md projects/ang-jsoneditor/ && npm run build:lib && cd dist/ang-jsoneditor && npm publish && rm README.md"
+    "build:lib": "ng build angular-jsoneditor",
+    "watch:lib": "ng build angular-jsoneditor --watch",
+    "publish": "cp README.md projects/angular-jsoneditor/ && npm run build:lib && cd dist/angular-jsoneditor && npm publish && rm README.md"
   },
   "private": false,
   "dependencies": {
