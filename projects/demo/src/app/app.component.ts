@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { schema } from './schema.value';
 
 @Component({
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
     ]
   };
 
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: UntypedFormBuilder) {
 
     this.editorOptions = new JsonEditorOptions();
     this.editorOptions.schema = schema;
