@@ -40,7 +40,7 @@
     "jsoneditor": "^9.1.8",
     "rxjs": "*",
     "webpack": "^4.46.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.9",
