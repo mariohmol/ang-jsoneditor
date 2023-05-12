@@ -25,7 +25,7 @@ Random Number: {{data.randomNumber}}
 
 <h3>Example with (change)</h3>
 <div style="height:600px;">
-  <json-editor [options]="editorOptions" (jsonChange)="changeLog($event)" [data]="data" #editor></json-editor>
+  <json-editor [options]="editorOptions" (change)="changeLog($event)" [data]="data" #editor></json-editor>
   <app-show [data]="showData"></app-show>
 </div>
 
