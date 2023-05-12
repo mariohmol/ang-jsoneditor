@@ -2,7 +2,7 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 /* eslint-disable @angular-eslint/no-output-native */
 
-import * as editor from 'jsoneditor';
+import JSONEditor from 'jsoneditor';
 
 import {
   ChangeDetectionStrategy,
@@ -88,7 +88,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     if (optionsCopy.mode === 'text' || optionsCopy.mode === 'code') {
       optionsCopy.onChangeJSON = null;
     }
-    this.editor = new editor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
+    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
 
     if (this.options.expandAll) {
       this.editor.expandAll();
