@@ -85,7 +85,13 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
       console.error(`Can't find the ElementRef reference for jsoneditor)`);
     }
 
-    if (optionsCopy.mode === 'text' || optionsCopy.mode === 'code') {
+    if (
+        optionsCopy.mode === 'text' || optionsCopy.mode === 'code' ||
+        (
+          optionsCopy.modes && 
+          (optionsCopy.modes.indexOf('text') !== -1 || optionsCopy.modes.indexOf('code') !== -1)
+        )
+      ) {
       optionsCopy.onChangeJSON = null;
     }
     this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
