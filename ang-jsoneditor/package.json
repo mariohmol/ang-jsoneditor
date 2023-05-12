@@ -1,6 +1,6 @@
 {
   "name": "ang-jsoneditor",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "homepage": "https://github.com/mariohmol/ang-jsoneditor",
   "repository": {
@@ -18,7 +18,7 @@
   "peerDependencies": {
     "@angular/core": "*",
     "@angular/common": "*",
-    "jsoneditor": "^9.1.8"
+    "jsoneditor": "9.10.0"
   },
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
