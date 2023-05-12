@@ -39,7 +39,7 @@ export class JsonEditorOptions {
 
 
   public onNodeName: () => void;
-  public onCreateMenu: (items: Array<any>, node: object) => void;
+  public onCreateMenu: (items: Array<any>, node: object) => Array<any>;
   public onColorPicker: () => void;
 
   /**
