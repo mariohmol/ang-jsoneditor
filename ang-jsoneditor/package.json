@@ -18,7 +18,7 @@
   "peerDependencies": {
     "@angular/core": "*",
     "@angular/common": "*",
-    "jsoneditor": "9.10.0"
+    "jsoneditor": "9.10.2"
   },
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
