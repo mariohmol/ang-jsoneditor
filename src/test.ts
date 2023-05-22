@@ -17,7 +17,6 @@ import { getTestBed } from '@angular/core/testing';
 // Unfortunately there's no typing for the `__karma__` variable. Just declare it as any.
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare let __karma__: any;
-declare let require: any;
 
 // Prevent Karma from running prematurely.
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
@@ -30,9 +29,5 @@ getTestBed().initTestEnvironment(
     teardown: { destroyAfterEach: false }
 }
 );
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
-// And load the modules.
-context.keys().map(context);
 // Finally, start Karma to run the tests.
 __karma__.start();
