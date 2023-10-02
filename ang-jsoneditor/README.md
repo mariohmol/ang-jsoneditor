@@ -172,7 +172,9 @@ You should have something like:
 
 ```ts
 makeOptions = () => {
-  return new JsonEditorOptions();
+  const options = new JsonEditorOptions();
+  options.modes = ['code', 'text', 'tree', 'view'];
+  return options;
 }
 ```
 
@@ -187,7 +189,8 @@ When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/deve
 
 # Collaborate
 
-Fork, clone this repo and install dependencies:
+Fork, clone this repo and install dependencies. 
+This project just works with webpack 4 (dont change to 5):
 
 ```sh
 npm i -g rimraf
