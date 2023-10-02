@@ -63,3 +63,5 @@ dist/
 /src/ang-jsoneditor
 package-lock.json
 yarn.lock
+
+.idea
