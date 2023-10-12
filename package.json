@@ -36,7 +36,7 @@
     "@angular/platform-browser-dynamic": "16.1.8",
     "@angular/router": "16.1.8",
     "core-js": "^3.6.4",
-    "jsoneditor": "9.10.2",
+    "jsoneditor": "9.10.3",
     "rxjs": "*",
     "webpack": "^5.88.2",
     "zone.js": "~0.13.1"
