@@ -35,7 +35,7 @@
 
 
 /** Evergreen browsers require these. **/
-import 'core-js/es/reflect';
+// import 'core-js/es/reflect';
 
 
 
