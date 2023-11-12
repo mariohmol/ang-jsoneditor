@@ -22,6 +22,7 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'json-editor',
+  standalone: true,
   template: `<div [id]="id" #jsonEditorContainer></div>`,
   providers: [
     {
@@ -49,7 +50,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
 
   public id = 'angjsoneditor' + Math.floor(Math.random() * 1000000);
   private _data: Object = {};
-  private editor: any;
+  private editor: JSONEditor;
 
   constructor() { }
 
@@ -65,14 +66,15 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   ngOnInit() {
     let optionsBefore = this.options;
     if (!this.optionsChanged && this.editor) {
-      optionsBefore = this.editor.options;
+      //TODO: check if this is needed
+      optionsBefore = (this.editor as any).options;
     }
 
     if (!this.options.onChangeJSON && this.jsonChange) {
-      this.options.onChangeJSON = this.onChangeJSON.bind(this);
+      this.options.onChangeJSON = this.onChangeJSON;
     }
     if (!this.options.onChange && this.change) {
-      this.options.onChange = this.onChange.bind(this);
+      this.options.onChange = this.onChange;
     }
     const optionsCopy = Object.assign({}, optionsBefore);
 
@@ -88,13 +90,13 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     if (
         optionsCopy.mode === 'text' || optionsCopy.mode === 'code' ||
         (
-          optionsCopy.modes && 
+          optionsCopy.modes &&
           (optionsCopy.modes.indexOf('text') !== -1 || optionsCopy.modes.indexOf('code') !== -1)
         )
       ) {
-      optionsCopy.onChangeJSON = null;
+      optionsCopy.onChangeJSON = undefined;
     }
-    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy, this._data);
+    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy as any, this._data);
 
     if (this.options.expandAll) {
       this.editor.expandAll();
@@ -117,12 +119,12 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   // Implemented as part of ControlValueAccessor
-  registerOnChange(fn) {
+  registerOnChange(fn: any) {
     this.onChangeModel = fn;
   }
 
   // Implemented as part of ControlValueAccessor.
-  registerOnTouched(fn) {
+  registerOnTouched(fn: any) {
     this.onTouched = fn;
   }
 
@@ -131,7 +133,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     this.disabled = isDisabled;
   }
 
-  public onChange(e) {
+  public onChange = () => {
     if (this.editor) {
       try {
         const json = this.editor.get();
@@ -145,7 +147,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     }
   }
 
-  public onChangeJSON(e) {
+  public onChangeJSON = () => {
     if (this.editor) {
       try {
         this.jsonChange.emit(this.editor.get());
@@ -183,7 +185,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public getName(): string {
-    return this.editor.getName();
+    return this.editor.getName()!;
   }
 
   public getText(): string {
@@ -202,7 +204,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
     this.editor.setName(name);
   }
 
-  public setSelection(start, end) {
+  public setSelection(start: any, end: any) {
     this.editor.setSelection(start, end);
   }
 
@@ -211,7 +213,8 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public getValidateSchema(): any {
-    return this.editor.validateSchema;
+    //TODO: check if this is needed
+    return (this.editor as any).validateSchema;
   }
 
   public setSchema(schema: any, schemaRefs: any) {
@@ -219,7 +222,8 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public search(query: string) {
-    this.editor.search(query);
+    //TODO: check if this is needed
+    (this.editor as any).search(query);
   }
 
   public setOptions(newOptions: JsonEditorOptions) {
@@ -240,7 +244,8 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public getEditor(){
-    return this.editor;
+    //TODO: made it any because of the missing type definition
+    return this.editor as any;
   }
 
   public isValidJson() {
@@ -257,7 +262,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   };
 
   // Implemented as part of ControlValueAccessor.
-  private onChangeModel = (e) => {
+  private onChangeModel = (e: any) => {
   };
 }
 

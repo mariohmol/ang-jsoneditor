@@ -16,15 +16,12 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/core": "*",
-    "@angular/common": "*",
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
     "jsoneditor": "^9.10.2"
   },
-  "ngPackage": {
-    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
-    "lib": {
-      "entryFile": "src/public_api.ts"
-    },
-    "dest": "../dist/ang-jsoneditor"
-  }
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
 }
