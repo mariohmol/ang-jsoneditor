@@ -126,7 +126,7 @@ export class DemoComponent implements OnInit {
 
   initEditorOptions(editorOptions) {
     // this.editorOptions.mode = 'code'; // set only one mode
-    editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
+    editorOptions.modes = ['code', 'text', 'tree', 'view', 'preview']; // set all allowed modes
     editorOptions.onCreateMenu = (items: Array<any>, node: object) => {
       console.log(items, node, 'onCreateMenu');
       return items;
