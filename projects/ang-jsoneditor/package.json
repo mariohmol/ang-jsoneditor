@@ -16,8 +16,8 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": "^19.2.14",
-    "@angular/core": "^19.2.14",
+    "@angular/common": "^20.1.3",
+    "@angular/core": "^20.1.3",
     "jsoneditor": "*"
   },
   "dependencies": {
