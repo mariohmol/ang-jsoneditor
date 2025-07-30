@@ -8,13 +8,14 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  EventEmitter,
   Input,
   OnDestroy,
   OnInit,
-  Output,
-  ViewChild,
-  forwardRef
+  forwardRef,
+  input,
+  model,
+  output,
+  viewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from './jsoneditoroptions';
@@ -22,12 +23,11 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'json-editor',
-  standalone: true,
   template: `<div [id]="id" #jsonEditorContainer></div>`,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => JsonEditorComponent),
+      useExisting: forwardRef(() => JsonEditor),
       multi: true
     }
   ],
@@ -35,14 +35,12 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
-  @ViewChild('jsonEditorContainer', { static: true }) jsonEditorContainer: ElementRef;
-  @Input() options: JsonEditorOptions = new JsonEditorOptions();
-  @Output()
-  change: EventEmitter<any> = new EventEmitter<any>();
-  @Output()
-  jsonChange: EventEmitter<any> = new EventEmitter<any>();
-  @Input() debug = false;
+export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
+  readonly jsonEditorContainer = viewChild<ElementRef>('jsonEditorContainer');
+   options = model<JsonEditorOptions>(new JsonEditorOptions());
+  readonly change = output<any>();
+  readonly jsonChange = output<any>();
+  readonly debug = input(false);
   public optionsChanged = false;
 
   disabled = false;
@@ -64,26 +62,28 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   ngOnInit() {
-    let optionsBefore = this.options;
+    let optionsBefore = this.options();
     if (!this.optionsChanged && this.editor) {
       //TODO: check if this is needed
       optionsBefore = (this.editor as any).options;
     }
 
-    if (!this.options.onChangeJSON && this.jsonChange) {
-      this.options.onChangeJSON = this.onChangeJSON;
+    const options = this.options();
+    if (!options.onChangeJSON && this.jsonChange) {
+      options.onChangeJSON = this.onChangeJSON;
     }
-    if (!this.options.onChange && this.change) {
-      this.options.onChange = this.onChange;
+    if (!options.onChange && this.change) {
+      options.onChange = this.onChange;
     }
     const optionsCopy = Object.assign({}, optionsBefore);
 
     // expandAll is an option only supported by ang-jsoneditor and not by the the original jsoneditor.
     delete optionsCopy.expandAll;
-    if (this.debug) {
+    if (this.debug()) {
       console.log(optionsCopy, this._data);
     }
-    if (!this.jsonEditorContainer.nativeElement) {
+    const jsonEditorContainer = this.jsonEditorContainer();
+    if (!jsonEditorContainer?.nativeElement) {
       console.error(`Can't find the ElementRef reference for jsoneditor)`);
     }
 
@@ -96,9 +96,9 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
       ) {
       optionsCopy.onChangeJSON = undefined;
     }
-    this.editor = new JSONEditor(this.jsonEditorContainer.nativeElement, optionsCopy as any, this._data);
+    this.editor = new JSONEditor(jsonEditorContainer?.nativeElement, optionsCopy as any, this._data);
 
-    if (this.options.expandAll) {
+    if (options.expandAll) {
       this.editor.expandAll();
     }
   }
@@ -140,7 +140,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
         this.onChangeModel(json);
         this.change.emit(json);
       } catch (error) {
-        if (this.debug) {
+        if (this.debug()) {
           console.log(error);
         }
       }
@@ -152,7 +152,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
       try {
         this.jsonChange.emit(this.editor.get());
       } catch (error) {
-        if (this.debug) {
+        if (this.debug()) {
           console.log(error);
         }
       }
@@ -231,7 +231,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
       this.editor.destroy();
     }
     this.optionsChanged = true;
-    this.options = newOptions;
+    this.options.set(newOptions);
     this.ngOnInit();
   }
 

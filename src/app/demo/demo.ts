@@ -1,21 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from '../../../projects/ang-jsoneditor/src/public-api';
+import { JsonEditor, JsonEditorOptions } from '../../../projects/ang-jsoneditor/src/public-api';
 import { ReactiveFormsModule, UntypedFormBuilder } from '@angular/forms';
 import { schema } from './schema.value';
 import { ShowComponent } from './show.component';
 
 
 @Component({
-  standalone: true,
-  imports: [ReactiveFormsModule, JsonEditorComponent, ShowComponent],
+  imports: [ReactiveFormsModule, JsonEditor, ShowComponent],
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnInit {
+export class Demo implements OnInit {
 
-  @ViewChild('editor', { static: false }) editor: JsonEditorComponent;
-  @ViewChild('editorTwo', { static: false }) editorTwo: JsonEditorComponent;
+  @ViewChild('editor', { static: false }) editor: JsonEditor;
+  @ViewChild('editorTwo', { static: false }) editorTwo: JsonEditor;
 
   public editorOptions: JsonEditorOptions;
   public data: any;
