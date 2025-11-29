@@ -27,7 +27,7 @@
     "rebuildsass": "npm rebuild node-sass"
   },
   "dependencies": {
-    "@angular/common": "17.0.2",
+    "@angular/common": "19.2.16",
     "@angular/compiler": "17.0.2",
     "@angular/core": "17.0.2",
     "@angular/forms": "17.0.2",
