@@ -27,31 +27,31 @@
     "rebuildsass": "npm rebuild node-sass"
   },
   "dependencies": {
-    "@angular/common": "20.3.15",
-    "@angular/compiler": "20.3.15",
-    "@angular/core": "20.3.15",
-    "@angular/forms": "20.3.15",
-    "@angular/platform-browser": "20.3.15",
-    "@angular/platform-browser-dynamic": "20.3.15",
-    "@angular/router": "20.3.15",
+    "@angular/common": "21.0.3",
+    "@angular/compiler": "21.0.3",
+    "@angular/core": "21.0.3",
+    "@angular/forms": "21.0.3",
+    "@angular/platform-browser": "21.0.3",
+    "@angular/platform-browser-dynamic": "21.0.3",
+    "@angular/router": "21.0.3",
     "jsoneditor": "*",
-    "ng-packagr": "^20.3.2",
+    "ng-packagr": "^21.0.0",
     "rxjs": "*",
     "tslib": "^2.3.0",
     "webpack": "^5.88.2",
     "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^20.3.13",
+    "@angular-devkit/schematics": "^21.0.3",
     "@angular-eslint/builder": "^18.4.3",
     "@angular-eslint/eslint-plugin": "^18.4.3",
     "@angular-eslint/eslint-plugin-template": "^18.4.3",
     "@angular-eslint/schematics": "^18.4.3",
     "@angular-eslint/template-parser": "^18.4.3",
-    "@angular/build": "^20.3.13",
-    "@angular/cli": "^20.3.13",
-    "@angular/compiler-cli": "20.3.15",
-    "@angular/language-service": "20.3.15",
+    "@angular/build": "^21.0.3",
+    "@angular/cli": "^21.0.3",
+    "@angular/compiler-cli": "21.0.3",
+    "@angular/language-service": "21.0.3",
     "@types/jasmine": "~5.1.2",
     "@types/jsoneditor": "^9.9.3",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
@@ -68,5 +68,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "5.9.3"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
