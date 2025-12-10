@@ -36,8 +36,8 @@
     "@angular/router": "20.3.15",
     "jsoneditor": "*",
     "ng-packagr": "^20.3.2",
-    "rxjs": "*",
-    "tslib": "^2.3.0",
+    "rxjs": "^7.8.2",
+    "tslib": "^2.8.1",
     "webpack": "^5.88.2",
     "zone.js": "~0.15.1"
   },
@@ -54,19 +54,20 @@
     "@angular/language-service": "20.3.15",
     "@types/jasmine": "~5.1.2",
     "@types/jsoneditor": "^9.9.3",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
     "cpr": "^3.0.1",
-    "eslint": "^8.53.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsdoc": "latest",
     "eslint-plugin-prefer-arrow": "latest",
-    "jasmine-core": "~5.1.0",
+    "jasmine-core": "~5.1.2",
     "karma": "6.4.2",
     "karma-chrome-launcher": "3.2.0",
-    "karma-coverage": "~2.2.0",
+    "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "5.9.3"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
