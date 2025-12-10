@@ -6,7 +6,7 @@ Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsone
 
 [StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
-Working with latest Angular 16. 
+Working with latest Angular 20. 
 
 ![Demo Image](/src/assets/printDemo.png)
 
