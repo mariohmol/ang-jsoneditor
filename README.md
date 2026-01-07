@@ -1,10 +1,8 @@
 # Angular Json Editor
 
-[![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
+This project is a fork of [ang-jsoneditor](https://github.com/mariohmol/ang-jsoneditor) originally created by [mariohmol](https://github.com/mariohmol).
 
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
-
-[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
 Working with latest Angular 20.
 
@@ -15,7 +13,7 @@ Working with latest Angular 20.
 To install this library with npm, run below command:
 
 ```sh
-$ npm install --save jsoneditor ang-jsoneditor
+$ npm install --save jsoneditor ngx-jsoneditor
 ```
 
 Example:
@@ -32,7 +30,7 @@ Import the standalone component as below:
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
+import { JsonEditorComponent, JsonEditorOptions } from 'ngx-jsoneditor';
 
 @Component({
   selector: 'app-root',

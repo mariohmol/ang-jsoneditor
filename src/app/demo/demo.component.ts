@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from '../../../projects/ang-jsoneditor/src/public-api';
+import { JsonEditorComponent, JsonEditorOptions } from '../../../projects/ngx-jsoneditor/src/public-api';
 import { ReactiveFormsModule, UntypedFormBuilder } from '@angular/forms';
 import { schema } from './schema.value';
 import { ShowComponent } from './show.component';
