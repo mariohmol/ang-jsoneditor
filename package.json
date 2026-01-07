@@ -1,6 +1,6 @@
 {
   "name": "ngx-jsoneditor",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -38,11 +38,10 @@
     "rxjs": "^7.8.2",
     "tslib": "^2.8.1",
     "webpack": "^5.103.0",
-    "zone.js": "~0.15.1",
     "zone.js": "~0.16.0"
   },
   "devDependencies": {
-     "@angular-devkit/build-angular": "^21.0.3",
+    "@angular-devkit/build-angular": "^21.0.3",
     "@angular-devkit/schematics": "^21.0.3",
     "@angular-eslint/builder": "^21.1.0",
     "@angular-eslint/eslint-plugin": "^21.1.0",
