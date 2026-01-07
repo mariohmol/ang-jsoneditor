@@ -1,8 +1,10 @@
 # Angular Json Editor
 
+This project is a fork of [ang-jsoneditor](https://github.com/mariohmol/ang-jsoneditor) originally created by [mariohmol](https://github.com/mariohmol).
+
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
 
-Working with latest Angular 18. 
+Working with latest Angular 18.
 
 ![Demo Image](/src/assets/printDemo.png)
 
@@ -10,8 +12,9 @@ Working with latest Angular 18.
 
 To install this library with npm, run below command:
 
+```sh
 $ npm install --save jsoneditor ngx-jsoneditor
-
+```
 
 Example:
 
@@ -23,25 +26,7 @@ Example:
 
 ### Configuration
 
-First, Import Angular  JsonEditor module in root
-
-```ts
-import { NgJsonEditorModule } from 'ngx-jsoneditor' 
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    ....,
-    NgJsonEditorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-Then setup your component models as below :
+Import the standalone component as below:
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
@@ -50,19 +35,21 @@ import { JsonEditorComponent, JsonEditorOptions } from 'ngx-jsoneditor';
 @Component({
   selector: 'app-root',
   template: '<json-editor [options]="editorOptions" [data]="data"></json-editor>',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [JsonEditorComponent]
 })
 export class AppComponent {
   public editorOptions: JsonEditorOptions;
   public data: any;
+  // optional
   @ViewChild(JsonEditorComponent, { static: false }) editor: JsonEditorComponent;
 
-  constructor() { 
+  constructor() {
     this.editorOptions = new JsonEditorOptions()
     this.editorOptions.modes = ['code', 'text', 'tree', 'view']; // set all allowed modes
     //this.options.mode = 'code'; //set only one mode
-      
-      this.data = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
+
+    this.data = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
   }
 
 }
@@ -78,7 +65,7 @@ Note : For better styling, add below line to your main style.css file
 
 Build it integrated with ReactiveForms:
 
-```ts 
+```ts
 this.form = this.fb.group({
   myinput: [this.data]
 });
@@ -92,11 +79,11 @@ this.form = this.fb.group({
 
 ### Extra Features
 
-Besides all the 
-[configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md) 
+Besides all the
+[configuration options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md)
 from the original jsoneditor, Angular Json Editor supports one additional option:
 
-_expandAll_ - to automatically expand all nodes upon json loaded with the _data_ input. 
+_expandAll_ - to automatically expand all nodes upon json loaded with the _data_ input.
 
 # Troubleshoot
 
@@ -141,7 +128,7 @@ Use debug mode to see in your console the data and options passed to jsoneditor.
 
 ## JSONOptions missing params
 
-If you find yourself trying to use a custom option that is not mapped here, you can do:
+If you find youself trying to use an custom option that is not mapped here, you can do:
 
 ```ts
 let editorOptions: JsonEditorOptions = new JsonEditorOptions(); (<any>this.editorOptions).templates = [{menu options objects as in json editor documentation}]
@@ -149,7 +136,7 @@ let editorOptions: JsonEditorOptions = new JsonEditorOptions(); (<any>this.edito
 
 See the [issue](https://github.com/mariohmol/ang-jsoneditor/issues/57)
 
-## Internet Explorer 
+## Internet Explorer
 
 If you want to support IE, please follow this guide:
 * https://github.com/mariohmol/ang-jsoneditor/issues/44#issuecomment-508650610
@@ -158,7 +145,7 @@ If you want to support IE, please follow this guide:
 
 To use multiple jsoneditors in your view you cannot use the same editor options.
 
-You should have something like: 
+You should have something like:
 
 ```html
 <div *ngFor="let prd of data.products" class="w-100-p p-24" >
@@ -168,9 +155,7 @@ You should have something like:
 
 ```ts
 makeOptions = () => {
-  const options = new JsonEditorOptions();
-  options.modes = ['code', 'text', 'tree', 'view'];
-  return options;
+  return new JsonEditorOptions();
 }
 ```
 
@@ -185,7 +170,7 @@ When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/deve
 
 # Collaborate
 
-Fork, clone this repo and install dependencies. 
+Fork, clone this repo and install dependencies.
 This project just works with webpack 4 (dont change to 5):
 
 ```sh

@@ -15,7 +15,7 @@
     "build:lib": "ng build --project ngx-jsoneditor",
     "watch": "npm run build:lib -- --watch",
     "build:full": "npm run build:lib && npm run build:app",
-    "publishnpm": "cp README.md projects/ngx-jsoneditor/README.md && npm run build:lib && cd dist/ngx-jsoneditor && npm publish",
+    "publishnpm": "cp README.md projects/ngx-jsoneditor/README.md && npm run build:lib && cd dist/ngx-jsoneditor && npm publish --access public",
     "test": "npm run test:dev && npm run e2e",
     "test:dev": "ng test --project ngx-jsoneditor-demo",
     "test:unit": "ng test",
