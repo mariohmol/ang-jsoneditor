@@ -3,8 +3,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "ang-jsoneditor": [
-        "./dist/ang-jsoneditor"
+      "ngx-jsoneditor": [
+        "./dist/ngx-jsoneditor"
       ]
     },
     "outDir": "./dist/out-tsc",

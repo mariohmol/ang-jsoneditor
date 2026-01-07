@@ -1,10 +1,6 @@
 # Angular Json Editor
 
-[![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
-
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
-
-[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
 Working with latest Angular 18. 
 
@@ -14,7 +10,7 @@ Working with latest Angular 18.
 
 To install this library with npm, run below command:
 
-$ npm install --save jsoneditor ang-jsoneditor
+$ npm install --save jsoneditor ngx-jsoneditor
 
 
 Example:
@@ -30,7 +26,7 @@ Example:
 First, Import Angular  JsonEditor module in root
 
 ```ts
-import { NgJsonEditorModule } from 'ang-jsoneditor' 
+import { NgJsonEditorModule } from 'ngx-jsoneditor' 
 
 @NgModule({
   declarations: [
@@ -49,7 +45,7 @@ Then setup your component models as below :
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
+import { JsonEditorComponent, JsonEditorOptions } from 'ngx-jsoneditor';
 
 @Component({
   selector: 'app-root',
@@ -145,7 +141,7 @@ Use debug mode to see in your console the data and options passed to jsoneditor.
 
 ## JSONOptions missing params
 
-If you find youself trying to use an custom option that is not mapped here, you can do:
+If you find yourself trying to use a custom option that is not mapped here, you can do:
 
 ```ts
 let editorOptions: JsonEditorOptions = new JsonEditorOptions(); (<any>this.editorOptions).templates = [{menu options objects as in json editor documentation}]
