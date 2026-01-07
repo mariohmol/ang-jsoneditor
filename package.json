@@ -1,6 +1,6 @@
 {
   "name": "ngx-jsoneditor",
-  "version": "19.0.0",
+  "version": "18.0.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -57,13 +57,6 @@
     "@types/jsoneditor": "^9.9.6",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
-    "@angular/cli": "^18.2.21",
-    "@angular/compiler-cli": "18.2.14",
-    "@angular/language-service": "18.2.14",
-    "@types/jasmine": "~5.1.2",
-    "@types/jsoneditor": "^9.9.3",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
     "@typescript-eslint/utils": "^7.18.0",
     "cpr": "^3.0.1",
     "eslint": "^8.57.1",
