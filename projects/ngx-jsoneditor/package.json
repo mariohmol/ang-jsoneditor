@@ -1,6 +1,6 @@
 {
   "name": "@msmidt/ngx-jsoneditor",
-  "version": "19.0.0",
+  "version": "20.0.0",
   "license": "MIT",
   "homepage": "https://github.com/maxi-smidt/ngx-jsoneditor",
   "repository": {
@@ -20,8 +20,8 @@
     "ngx-jsoneditor"
   ],
   "peerDependencies": {
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
     "jsoneditor": "^10.4.2"
   },
   "dependencies": {
