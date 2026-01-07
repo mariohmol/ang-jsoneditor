@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { JsonEditorComponent } from 'ngx-jsoneditor';
+import { JsonEditorComponent } from '@msmidt/ngx-jsoneditor';
 import { DemoComponent } from './demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

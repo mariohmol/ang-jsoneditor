@@ -3,8 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@msmidt/ngx-jsoneditor": [
+        "./projects/ngx-jsoneditor/src/public-api.ts"
+      ],
       "ngx-jsoneditor": [
-        "./dist/ngx-jsoneditor"
+        "./projects/ngx-jsoneditor/src/public-api.ts"
       ]
     },
     "outDir": "./dist/out-tsc",
