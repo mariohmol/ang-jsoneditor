@@ -1,10 +1,10 @@
 {
-  "name": "ang-jsoneditor",
-  "version": "4.0.1",
+  "name": "ngx-jsoneditor",
+  "version": "19.0.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mariohmol/ang-jsoneditor"
+    "url": "https://github.com/maxi-smidt/ngx-jsoneditor"
   },
   "license": "MIT",
   "scripts": {
@@ -12,13 +12,12 @@
     "start": "ng serve",
     "build": "ng build",
     "build:app": "npm run build:lib && ng build",
-    "build:lib": "ng build --project ang-jsoneditor",
+    "build:lib": "ng build --project ngx-jsoneditor",
     "watch": "npm run build:lib -- --watch",
     "build:full": "npm run build:lib && npm run build:app",
-    "publishnpm": "cp README.md projects/ang-jsoneditor/README.md && npm run build:lib && cd dist/ang-jsoneditor && npm publish",
-    "unpublish": "npm deprecate -f 'ang-jsoneditor@1.9.3' 'this package has been deprecated'",
+    "publishnpm": "cp README.md projects/ngx-jsoneditor/README.md && npm run build:lib && cd dist/ngx-jsoneditor && npm publish --access public",
     "test": "npm run test:dev && npm run e2e",
-    "test:dev": "ng test --project ang-jsoneditor-demo",
+    "test:dev": "ng test --project ngx-jsoneditor-demo",
     "test:unit": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -43,6 +42,7 @@
     "zone.js": "~0.15.1"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.19",
     "@angular-devkit/schematics": "^19.2.19",
     "@angular-eslint/builder": "^19.8.1",
     "@angular-eslint/eslint-plugin": "^19.8.1",
@@ -57,6 +57,14 @@
     "@types/jsoneditor": "^9.9.6",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
+    "@angular/cli": "^18.2.21",
+    "@angular/compiler-cli": "18.2.14",
+    "@angular/language-service": "18.2.14",
+    "@types/jasmine": "~5.1.2",
+    "@types/jsoneditor": "^9.9.3",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/utils": "^7.18.0",
     "cpr": "^3.0.1",
     "eslint": "^8.57.1",
     "eslint-plugin-import": "latest",
