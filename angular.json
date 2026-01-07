@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ang-jsoneditor-demo": {
+    "ngx-jsoneditor-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/ang-jsoneditor-demo",
+            "outputPath": "dist/ngx-jsoneditor-demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ang-jsoneditor-demo:build:production"
+              "buildTarget": "ngx-jsoneditor-demo:build:production"
             },
             "development": {
-              "buildTarget": "ang-jsoneditor-demo:build:development"
+              "buildTarget": "ngx-jsoneditor-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
-            "buildTarget": "ang-jsoneditor-demo:build"
+            "buildTarget": "ngx-jsoneditor-demo:build"
           }
         },
         "test": {
@@ -97,23 +97,23 @@
         }
       }
     },
-    "ang-jsoneditor": {
+    "ngx-jsoneditor": {
       "projectType": "library",
-      "root": "projects/ang-jsoneditor",
-      "sourceRoot": "projects/ang-jsoneditor/src",
+      "root": "projects/ngx-jsoneditor",
+      "sourceRoot": "projects/ngx-jsoneditor/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "options": {
-            "project": "projects/ang-jsoneditor/ng-package.json"
+            "project": "projects/ngx-jsoneditor/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ang-jsoneditor/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-jsoneditor/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ang-jsoneditor/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-jsoneditor/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -121,7 +121,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "projects/ang-jsoneditor/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-jsoneditor/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

@@ -1,0 +1,34 @@
+{
+  "name": "@msmidt/ngx-jsoneditor",
+  "version": "20.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/maxi-smidt/ngx-jsoneditor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxi-smidt/ngx-jsoneditor.git"
+  },
+  "author": "Maximilian Smidt <maxismidt@icloud.com>",
+  "contributors": [
+    "Mario Mol <mariohmol@gmail.com>",
+    "Manish Sodavadiya <manish_it56@yahoo.com>"
+  ],
+  "keywords": [
+    "angular",
+    "jsoneditor",
+    "ang-jsoneditor",
+    "ng-jsoneditor",
+    "ngx-jsoneditor"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "jsoneditor": "^10.4.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
