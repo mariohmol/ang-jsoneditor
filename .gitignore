@@ -60,7 +60,7 @@ typings/
 
 dist/
 .ng_build/
-/src/ang-jsoneditor
+/src/ngx-jsoneditor
 package-lock.json
 yarn.lock
 

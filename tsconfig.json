@@ -3,8 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "ang-jsoneditor": [
-        "./dist/ang-jsoneditor"
+      "@msmidt/ngx-jsoneditor": [
+        "./projects/ngx-jsoneditor/src/public-api.ts"
+      ],
+      "ngx-jsoneditor": [
+        "./projects/ngx-jsoneditor/src/public-api.ts"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -19,9 +22,8 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
