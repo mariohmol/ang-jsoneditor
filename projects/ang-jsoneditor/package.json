@@ -2,10 +2,10 @@
   "name": "@msmidt/ngx-jsoneditor",
   "version": "18.0.0",
   "license": "MIT",
-  "homepage": "https://github.com/maxi-smidt/ang-jsoneditor",
+  "homepage": "https://github.com/maxi-smidt/ngx-jsoneditor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxi-smidt/ang-jsoneditor.git"
+    "url": "https://github.com/maxi-smidt/ngx-jsoneditor.git"
   },
   "author": "Maximilian Smidt <maxismidt@icloud.com>",
   "contributors": [
