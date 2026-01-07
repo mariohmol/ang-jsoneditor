@@ -1,5 +1,7 @@
 # Angular Json Editor
 
+This project is a fork of [ang-jsoneditor]() originally created by [mariohmol](https://github.com/mariohmol).
+
 [![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
 
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
