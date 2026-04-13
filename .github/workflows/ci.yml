@@ -39,4 +39,4 @@ jobs:
         run: ./node_modules/.bin/ng build
 
       - name: Run unit tests
-        run: ./node_modules/.bin/ng test --project ang-jsoneditor --watch=false --browsers=ChromeHeadlessNoSandbox
+        run: ./node_modules/.bin/ng test --project ang-jsoneditor --watch=false --browsers=ChromeHeadless

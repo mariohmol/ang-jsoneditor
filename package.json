@@ -22,7 +22,7 @@
     "test": "npm run test:dev && npm run e2e",
     "test:dev": "ng test --project ang-jsoneditor-demo",
     "test:unit": "ng test",
-    "test:ci": "ng test --project ang-jsoneditor --watch=false --browsers=ChromeHeadlessNoSandbox",
+    "test:ci": "ng test --project ang-jsoneditor --watch=false --browsers=ChromeHeadless",
     "deploy:demo": "npm run build:lib && ng build --base-href /ang-jsoneditor/ && cp -r dist/ang-jsoneditor-demo/browser/. /var/www/test/ang-jsoneditor/",
     "lint": "ng lint",
     "e2e": "ng e2e",
