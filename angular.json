@@ -79,6 +79,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "karmaConfig": "karma.conf.js",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -121,6 +122,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "karmaConfig": "karma.conf.js",
             "tsConfig": "projects/ang-jsoneditor/tsconfig.spec.json",
             "polyfills": [
               "zone.js",

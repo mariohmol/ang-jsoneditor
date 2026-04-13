@@ -1,0 +1,36 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # needed for npm provenance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+
+      - name: Build library
+        run: ./node_modules/.bin/ng build --project ang-jsoneditor
+
+      - name: Copy README into dist
+        run: cp README.md dist/ang-jsoneditor/README.md
+
+      - name: Publish
+        run: npm publish --provenance --access public
+        working-directory: dist/ang-jsoneditor
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -5,6 +5,7 @@
 import JSONEditor from 'jsoneditor';
 
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -35,7 +36,7 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
+export class JsonEditor implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
   readonly jsonEditorContainer = viewChild<ElementRef>('jsonEditorContainer');
    options = model<JsonEditorOptions>(new JsonEditorOptions());
   readonly change = output<any>();
@@ -57,11 +58,19 @@ export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
     this._data = value;
     if (this.editor) {
       this.editor.destroy();
-      this.ngOnInit();
+      this._createEditor();
     }
   }
 
   ngOnInit() {
+    // Initialization is deferred to ngAfterViewInit so that viewChild() is resolved.
+  }
+
+  ngAfterViewInit() {
+    this._createEditor();
+  }
+
+  private _createEditor() {
     let optionsBefore = this.options();
     if (!this.optionsChanged && this.editor) {
       //TODO: check if this is needed
@@ -85,6 +94,7 @@ export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
     const jsonEditorContainer = this.jsonEditorContainer();
     if (!jsonEditorContainer?.nativeElement) {
       console.error(`Can't find the ElementRef reference for jsoneditor)`);
+      return;
     }
 
     if (
@@ -96,7 +106,7 @@ export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
       ) {
       optionsCopy.onChangeJSON = undefined;
     }
-    this.editor = new JSONEditor(jsonEditorContainer?.nativeElement, optionsCopy as any, this._data);
+    this.editor = new JSONEditor(jsonEditorContainer.nativeElement, optionsCopy as any, this._data);
 
     if (options.expandAll) {
       this.editor.expandAll();
@@ -232,7 +242,7 @@ export class JsonEditor implements ControlValueAccessor, OnInit, OnDestroy {
     }
     this.optionsChanged = true;
     this.options.set(newOptions);
-    this.ngOnInit();
+    this._createEditor();
   }
 
   public update(json: JSON) {

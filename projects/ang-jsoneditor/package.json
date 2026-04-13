@@ -1,6 +1,6 @@
 {
   "name": "ang-jsoneditor",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "license": "MIT",
   "homepage": "https://github.com/mariohmol/ang-jsoneditor",
   "repository": {
@@ -16,8 +16,8 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": "^20.1.3",
-    "@angular/core": "^20.1.3",
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0",
     "jsoneditor": "*"
   },
   "dependencies": {
