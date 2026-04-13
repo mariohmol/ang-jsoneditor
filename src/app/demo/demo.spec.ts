@@ -1,26 +1,26 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { JsonEditorComponent } from 'ang-jsoneditor';
-import { DemoComponent } from './demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Demo } from './demo';
+import { JsonEditor } from '../../../projects/ang-jsoneditor/src/public-api';
 
-describe('DemoComponent', () => {
-  let component: DemoComponent;
-  let fixture: ComponentFixture<DemoComponent>;
+describe('Demo', () => {
+  let component: Demo;
+  let fixture: ComponentFixture<Demo>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        JsonEditorComponent,
+        JsonEditor,
         FormsModule,
         ReactiveFormsModule,
-        DemoComponent
+        Demo
       ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DemoComponent);
+    fixture = TestBed.createComponent(Demo);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -21,7 +21,9 @@ Random Number: {{data.randomNumber}}
 
 <hr />
 
-<h3 *ngIf="editorOptions.language">Force Language to {{editorOptions.language}}</h3>
+@if (editorOptions.language) {
+  <h3>Force Language to {{editorOptions.language}}</h3>
+}
 
 <h3>Example with (change)</h3>
 <div style="height:600px;">
@@ -36,10 +38,12 @@ Random Number: {{data.randomNumber}}
 <div style="height:300px;">
   <form [formGroup]="form" (submit)="submit()">
     <json-editor [options]="editorOptions2" formControlName="myinput" #editorTwo></json-editor>
-    <div *ngIf="formData">
-      <h4>Form submitted</h4>
-      {{ formData }}
-    </div>
+    @if (formData) {
+      <div>
+        <h4>Form submitted</h4>
+        {{ formData }}
+      </div>
+    }
     <button>Submit</button>
   </form>
 </div>
@@ -47,11 +51,15 @@ Random Number: {{data.randomNumber}}
 
 <h2>Multi json in a loop</h2>
 <button (click)="show=!show">Show/Hide Json Editors</button>
-<div *ngIf="show === true">
-  <div *ngFor="let prd of dataMulti.products" class="w-100-p p-24">
-    <json-editor [options]="makeOptions()" [data]="prd" (change)="showJson($event)" ></json-editor>
+@if (show === true) {
+  <div>
+    @for (prd of dataMulti.products; track prd) {
+      <div class="w-100-p p-24">
+        <json-editor [options]="makeOptions()" [data]="prd" (change)="showJson($event)" ></json-editor>
+      </div>
+    }
   </div>
-</div>
+}
 
 
 <table>
