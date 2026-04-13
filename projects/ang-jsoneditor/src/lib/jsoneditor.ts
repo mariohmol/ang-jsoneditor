@@ -23,6 +23,7 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'json-editor',
   template: `<div [id]="id" #jsonEditorContainer></div>`,
+  styles: [`:host { display: block; } :host > div { height: 100%; }`],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

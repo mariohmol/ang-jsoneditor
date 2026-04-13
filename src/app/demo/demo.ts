@@ -74,20 +74,48 @@ export class Demo implements OnInit {
   ngOnInit() {
     this.showData = this.data = {
       randomNumber: 2,
+      description: 'Search for "pilot" to test auto-scroll. It is near the bottom of the list.',
+      manufacturers: [
+        { id: 'toyota', country: 'Japan', founded: 1937, employees: 370870 },
+        { id: 'ford', country: 'USA', founded: 1903, employees: 186000 },
+        { id: 'bmw', country: 'Germany', founded: 1916, employees: 118909 },
+        { id: 'mercedes', country: 'Germany', founded: 1926, employees: 172425 },
+        { id: 'volkswagen', country: 'Germany', founded: 1937, employees: 672800 },
+        { id: 'hyundai', country: 'South Korea', founded: 1967, employees: 75000 },
+        { id: 'nissan', country: 'Japan', founded: 1933, employees: 133580 },
+        { id: 'chevrolet', country: 'USA', founded: 1911, employees: 155000 },
+        { id: 'subaru', country: 'Japan', founded: 1953, employees: 15000 },
+        { id: 'mazda', country: 'Japan', founded: 1920, employees: 48000 }
+      ],
       products: [
         {
           name: 'car',
-          product:
-            [
-              {
-                name: 'honda',
-                model: [
-                  { id: 'civic', name: 'civic' },
-                  { id: 'accord', name: 'accord' }, { id: 'crv', name: 'crv' },
-                  { id: 'pilot', name: 'pilot' }, { id: 'odyssey', name: 'odyssey' }
-                ]
-              }
-            ]
+          product: [
+            {
+              name: 'honda',
+              model: [
+                { id: 'civic', name: 'civic', year: 2020, price: 21550 },
+                { id: 'accord', name: 'accord', year: 2021, price: 25970 },
+                { id: 'crv', name: 'crv', year: 2022, price: 28410 },
+                { id: 'hrv', name: 'hrv', year: 2022, price: 23650 },
+                { id: 'fit', name: 'fit', year: 2020, price: 16190 },
+                { id: 'ridgeline', name: 'ridgeline', year: 2022, price: 36490 },
+                { id: 'passport', name: 'passport', year: 2022, price: 37050 },
+                { id: 'pilot', name: 'pilot', year: 2022, price: 38170 },
+                { id: 'odyssey', name: 'odyssey', year: 2022, price: 32490 }
+              ]
+            },
+            {
+              name: 'toyota',
+              model: [
+                { id: 'camry', name: 'camry', year: 2022, price: 25945 },
+                { id: 'corolla', name: 'corolla', year: 2022, price: 20075 },
+                { id: 'rav4', name: 'rav4', year: 2022, price: 27575 },
+                { id: 'highlander', name: 'highlander', year: 2022, price: 35810 },
+                { id: 'tacoma', name: 'tacoma', year: 2022, price: 27450 }
+              ]
+            }
+          ]
         }
       ]
     };
