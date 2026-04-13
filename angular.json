@@ -32,7 +32,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "jsoneditor"
+            ]
           },
           "configurations": {
             "production": {
@@ -54,6 +57,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "pages": {
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"

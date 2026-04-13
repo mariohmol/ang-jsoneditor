@@ -22,7 +22,7 @@
     "build:lib": "ng build --project ang-jsoneditor",
     "watch": "npm run build:lib -- --watch",
     "build:full": "npm run build:lib && npm run build:app",
-    "build:pages": "npm run build:lib && ng build --base-href /ang-jsoneditor/ --output-path dist/pages && cp -r dist/pages/browser/. docs/ && rm -rf dist/pages",
+    "build:pages": "npm run build:lib && ng build --configuration pages --base-href /ang-jsoneditor/ --output-path dist/pages && find docs -type f ! -name '.nojekyll' -delete && cp -r dist/pages/browser/. docs/ && rm -rf dist/pages",
     "publishnpm": "cp README.md projects/ang-jsoneditor/README.md && npm run build:lib && cd dist/ang-jsoneditor && npm publish",
     "unpublish": "npm deprecate -f 'ang-jsoneditor@1.9.3' 'this package has been deprecated'",
     "test": "npm run test:dev && npm run e2e",
