@@ -1,12 +1,13 @@
 # Angular Json Editor
 
-[![Build Status](https://travis-ci.org/mariohmol/ang-jsoneditor.svg?branch=master)](https://travis-ci.org/mariohmol/ang-jsoneditor)
+[![CI](https://github.com/mariohmol/ang-jsoneditor/actions/workflows/ci.yml/badge.svg)](https://github.com/mariohmol/ang-jsoneditor/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/ang-jsoneditor.svg)](https://www.npmjs.com/package/ang-jsoneditor)
 
 Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)). View/Edit Json file with formatting.
 
-[StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
+**[Live Demo](https://mariohmol.github.io/ang-jsoneditor/)** | [StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
-Working with latest Angular 18/19.
+Working with Angular 17 / 18 / 19 / 20.
 
 ![Demo Image](/src/assets/printDemo.png)
 
@@ -163,12 +164,16 @@ makeOptions = () => {
 
 # Demo
 
-Demo component files are included in Git Project.
+Live demo: **[https://mariohmol.github.io/ang-jsoneditor/](https://mariohmol.github.io/ang-jsoneditor/)**
 
-Demo Project with a lot of different implementations (ngInit, change event and others):
-[https://github.com/mariohmol/ang-jsoneditor/tree/master/src/app/demo)
+Demo component files are included in the Git project under [`src/app/demo`](https://github.com/mariohmol/ang-jsoneditor/tree/master/src/app/demo), with examples for ngInit, change events, reactive forms, and more.
 
-When publishing it to npm, look over this docs: https://docs.npmjs.com/misc/developers
+To rebuild the demo locally:
+```sh
+npm run build:pages
+```
+
+When publishing to npm, see: https://docs.npmjs.com/misc/developers
 
 # Collaborate
 
