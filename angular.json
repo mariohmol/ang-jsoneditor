@@ -57,6 +57,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "pages": {
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"
