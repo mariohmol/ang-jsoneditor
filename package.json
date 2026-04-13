@@ -7,6 +7,7 @@
     "url": "https://github.com/mariohmol/ang-jsoneditor"
   },
   "license": "MIT",
+  "packageManager": "pnpm@9",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
