@@ -76,6 +76,15 @@
             "buildTarget": "ang-jsoneditor-demo:build"
           }
         },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        },
         "test": {
           "builder": "@angular/build:karma",
           "options": {
@@ -117,6 +126,15 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ang-jsoneditor/**/*.ts",
+              "projects/ang-jsoneditor/**/*.html"
+            ]
+          }
         },
         "test": {
           "builder": "@angular/build:karma",

@@ -144,7 +144,6 @@ export class Demo implements OnInit {
   }
 
   setAce() {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const aceEditor = (<any>window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
     // custom your ace here
     aceEditor.setReadOnly(true);
@@ -165,7 +164,6 @@ export class Demo implements OnInit {
 
   customLanguage() {
     this.editorOptions.languages = {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       'pt-BR': {
         auto: 'Automático testing'
       },

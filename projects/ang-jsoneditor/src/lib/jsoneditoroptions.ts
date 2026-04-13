@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
 export type JsonEditorMode = 'tree' | 'view' | 'form' | 'code' | 'text';
 
 export interface JsonEditorTreeNode {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @angular-eslint/no-input-rename */
 /* eslint-disable @angular-eslint/no-output-native */
 
@@ -11,7 +10,6 @@ import {
   ElementRef,
   Input,
   OnDestroy,
-  OnInit,
   forwardRef,
   input,
   model,
@@ -36,7 +34,7 @@ import { IError, JsonEditorMode, JsonEditorOptions, JsonEditorTreeNode } from '.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class JsonEditor implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export class JsonEditor implements ControlValueAccessor, AfterViewInit, OnDestroy {
   readonly jsonEditorContainer = viewChild<ElementRef>('jsonEditorContainer');
    options = model<JsonEditorOptions>(new JsonEditorOptions());
   readonly change = output<any>();
@@ -60,10 +58,6 @@ export class JsonEditor implements ControlValueAccessor, OnInit, AfterViewInit, 
       this.editor.destroy();
       this._createEditor();
     }
-  }
-
-  ngOnInit() {
-    // Initialization is deferred to ngAfterViewInit so that viewChild() is resolved.
   }
 
   ngAfterViewInit() {
