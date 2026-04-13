@@ -71,11 +71,20 @@ export class AppComponent {
 
 }
 ```
-Note : For better styling, add below line to your main style.css file
+Note : For better styling, add below line to your main style.css/scss file
 
-```js
-@import "~jsoneditor/dist/jsoneditor.min.css";
+```css
+@import "jsoneditor/dist/jsoneditor.min.css";
 ```
+
+> **Angular 16+ new build system (esbuild):** The old `~` prefix (e.g. `~jsoneditor/...`) is webpack-specific and is not supported by the new esbuild-based builder. Use the path without `~` as shown above, or add the file directly to the `styles` array in `angular.json`:
+>
+> ```json
+> "styles": [
+>   "node_modules/jsoneditor/dist/jsoneditor.min.css",
+>   "src/styles.scss"
+> ]
+> ```
 
 
 ### Forms
@@ -109,7 +118,7 @@ If you have issue with the height of the component, you can try one of those sol
 When you import CSS:
 
 ```css
-@import "~jsoneditor/dist/jsoneditor.min.css";
+@import "jsoneditor/dist/jsoneditor.min.css";
 textarea.jsoneditor-text{min-height:350px;}
 ```
 
