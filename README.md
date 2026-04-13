@@ -7,7 +7,7 @@ Angular Json Editor (wrapper for [jsoneditor](https://github.com/josdejong/jsone
 
 **[Live Demo](https://mariohmol.github.io/ang-jsoneditor/)** | [StackBlitz template](https://stackblitz.com/edit/ang-jsoneditor)
 
-Working with Angular 17 / 18 / 19 / 20.
+Working with Angular 17 / 18 / 19 / 20 / 21. Requires Angular 17 or higher.
 
 ![Demo Image](/src/assets/printDemo.png)
 
