@@ -22,8 +22,10 @@ $ npm install --save jsoneditor ang-jsoneditor
 Example:
 
 ```html
-<json-editor [options]="editorOptions" [data]="data" (change)="getData($event)"></json-editor>
+<json-editor style="height: 500px;" [options]="editorOptions" [data]="data" (change)="getData($event)"></json-editor>
 ```
+
+> **Important:** `<json-editor>` requires an explicit height for tree/view/form modes to enable search scrolling and proper layout. Set it directly on the element or via a CSS class. Without a height, the editor expands to fit its content and the built-in search will not auto-scroll to results.
 
 ## Usage
 

@@ -26,27 +26,23 @@ Random Number: {{data.randomNumber}}
 }
 
 <h3>Example with (change)</h3>
-<div style="height:600px;">
-  <json-editor [options]="editorOptions" (change)="changeLog($event)" [data]="data" #editor></json-editor>
-  <app-show [data]="showData"></app-show>
-</div>
+<json-editor style="height:600px;" [options]="editorOptions" (change)="changeLog($event)" [data]="data" #editor></json-editor>
+<app-show [data]="showData"></app-show>
 
 
 
 <h3>Using options and data variable </h3>
 
-<div style="height:300px;">
-  <form [formGroup]="form" (submit)="submit()">
-    <json-editor [options]="editorOptions2" formControlName="myinput" #editorTwo></json-editor>
-    @if (formData) {
-      <div>
-        <h4>Form submitted</h4>
-        {{ formData }}
-      </div>
-    }
-    <button>Submit</button>
-  </form>
-</div>
+<form [formGroup]="form" (submit)="submit()">
+  <json-editor style="height:300px;" [options]="editorOptions2" formControlName="myinput" #editorTwo></json-editor>
+  @if (formData) {
+    <div>
+      <h4>Form submitted</h4>
+      {{ formData }}
+    </div>
+  }
+  <button>Submit</button>
+</form>
 
 
 <h2>Multi json in a loop</h2>
