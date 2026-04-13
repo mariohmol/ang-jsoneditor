@@ -160,5 +160,8 @@ export class JsonEditorOptions {
     this.mode = 'tree';
     this.search = true;
     this.indentation = 2;
+    this.mainMenuBar = true;
+    this.navigationBar = true;
+    this.statusBar = true;
   }
 }
